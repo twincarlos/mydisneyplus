@@ -16,13 +16,17 @@ class Content(db.Model):
 
     creator = db.relationship("User", back_populates="contents")
     seasons = db.relationship("Season", back_populates="content", cascade="all, delete")
-    favorite = db.relationship("Favorite", back_populates="favorite", cascade="all, delete")
+    favorite = db.relationship("Favorite", back_populates="content", cascade="all, delete")
 
     def to_dict(self):
         if self.content_type == "Movie":
             return {
             'id': self.id,
-            'creator_id': self.creator_id,
+            'creator': {
+                'id': self.creator.id,
+                'username': self.creator.usernmae,
+                'profile_picture': self.creator.profile_picture
+            },
             'content_type': self.content_type,
             'title': self.title,
             'description': self.description,
@@ -34,7 +38,11 @@ class Content(db.Model):
         else:
             return {
             'id': self.id,
-            'creator_id': self.creator_id,
+            'creator': {
+                'id': self.creator.id,
+                'username': self.creator.usernmae,
+                'profile_picture': self.creator.profile_picture
+            },
             'content_type': self.content_type,
             'title': self.title,
             'description': self.description,

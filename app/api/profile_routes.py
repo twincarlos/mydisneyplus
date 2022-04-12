@@ -6,21 +6,15 @@ import json
 
 profile_routes = Blueprint("profiles", __name__)
 
-@profile_routes.route('/all')
+@profile_routes.route('/', methods=['GET', 'POST'])
 def all_profiles():
     profiles = Profile.query(Profile).filter(Profile.owner_id == current_user.id)
-    return [profile.to_dict() for profile in profiles]
-
-@profile_routes.route('/<int:profile_id>', methods=['GET', 'POST', 'PUT', 'DELETE'])
-def crud_profiles(profile_id):
-    data = request.json
-    profile = Profile.query.get(profile_id)
 
     if request.method == 'GET':
-        return profile.to_dict()
+        return [profile.to_dict() for profile in profiles]
 
     if request.method == 'POST':
-        profiles = Profile.query(Profile).filter(Profile.owner_id == current_user.id)
+        data = request.json
         if len(data["avatar"]) == 0:
             return { "error": "Please, select an avatar." }
         for profile in profiles:
@@ -34,6 +28,14 @@ def crud_profiles(profile_id):
         db.session.add(new_profile)
         db.session.commit()
         return new_profile.to_dict()
+
+@profile_routes.route('/<int:profile_id>', methods=['GET', 'PUT', 'DELETE'])
+def crud_profiles(profile_id):
+    data = request.json
+    profile = Profile.query.get(profile_id)
+
+    if request.method == 'GET':
+        return profile.to_dict()
 
     if request.method == 'PUT':
         if len(data["avatar"]) == 0:

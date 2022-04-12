@@ -9,13 +9,14 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [profilePicture, setProfilePicture] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, password, repeatPassword, profilePicture));
       if (data) {
         setErrors(data)
       }
@@ -37,6 +38,11 @@ const SignUpForm = () => {
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
   };
+
+  const updateProfile = (e) => {
+    const file = e.target.files[0];
+    setProfilePicture(file);
+  }
 
   if (user) {
     return <Redirect to='/' />;
@@ -84,6 +90,16 @@ const SignUpForm = () => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+        ></input>
+      </div>
+      <div>
+        <label>Profile Picture</label>
+        <input
+              type='file'
+              accept='image/*'
+              name='profile_picture'
+              onChange={updateProfile}
+              defaultValue={profilePicture}
         ></input>
       </div>
       <button type='submit'>Sign Up</button>
