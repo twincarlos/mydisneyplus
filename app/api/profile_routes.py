@@ -45,7 +45,7 @@ def crud_profiles(profile_id):
         profile.avatar = data["avatar"]
         db.session.commit()
         return profile.to_dict()
-    
+
     if request.method == 'DELETE':
         if len(profiles) == 1:
             return { "error": "You must have at least one profile." }
@@ -62,8 +62,8 @@ def favorite_content(profile_id, content_id):
     return content.to_dict()
 
 @profile_routes.route('/<int:profile_id>/unfavorite/<int:content_id>', methods=['DELETE'])
-def favorite_content(profile_id, content_id):
-    favorite = Favorite.query.(Favorite).filter(Favorite.profile_id == profile_id, Favorite.content_id == content_id).first()
+def unfavorite_content(profile_id, content_id):
+    favorite = Favorite.query(Favorite).filter(Favorite.profile_id == profile_id, Favorite.content_id == content_id).first()
     db.session.delete(favorite)
     db.session.commit()
     content = Content.query.get(content_id)

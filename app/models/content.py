@@ -28,7 +28,7 @@ class Content(db.Model):
             'description': self.description,
             'thumbnail': self.thumbnail,
             'media': self.media,
-            'categories': self.categories
+            'categories': self.categories,
             'seasons': []
             }
         else:
@@ -40,6 +40,6 @@ class Content(db.Model):
             'description': self.description,
             'thumbnail': self.thumbnail,
             'media': self.media,
-            'categories': self.categories
+            'categories': self.categories,
             'seasons': [season.to_dict() for season in self.seasons]
             }
