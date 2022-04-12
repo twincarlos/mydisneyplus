@@ -10,6 +10,10 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    profile_picture = db.Column(db.String, nullable=False)
+
+    profiles = db.relationship("Profile", back_populates="owner", cascade="all, delete")
+    contents = db.relationship("Content", back_populates="creator", cascade="all, delete")
 
     @property
     def password(self):
@@ -26,5 +30,7 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'profile_picture': self.profile_picture,
+            'profiles': [profile.to_dict() for profile in self.profiles]
         }
