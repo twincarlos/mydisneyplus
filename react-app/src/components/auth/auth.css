@@ -1,0 +1,18 @@
+form#login {
+    position: relative;
+    top: 100px;
+}
+
+button#logout-button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #cacaca;
+    padding-left: 0;
+    width: fit-content;
+    cursor: pointer;
+}
+
+button#logout-button:hover {
+    color: white;
+}

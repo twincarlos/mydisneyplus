@@ -170,6 +170,7 @@ export default function reducer(state = initialState, action) {
       return state;
     case REMOVE_USER:
       state.user = null;
+      state.profile = null;
       return state;
     case SET_PROFILE:
       state.profile = action.profile;

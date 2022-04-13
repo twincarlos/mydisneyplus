@@ -1,0 +1,128 @@
+nav {
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+nav > a {
+    margin-right: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+nav > a > p {
+    border-bottom: 2px solid transparent;
+    transition: .2s;
+}
+
+nav > a > p:hover {
+    border-bottom: 2px solid white;
+}
+
+nav > a > i {
+    margin-right: 10px;
+    margin-bottom: 6px;
+}
+
+/* a#login {
+    color: #F9F9F9;
+    position: absolute;
+    right: 50px;
+    background-color: #000000CC;
+    padding: 6px 20px;
+    height: 45px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+a#login:hover {
+    background-color: #F9F9F9;
+    color: #000000CC;
+} */
+
+/* PROFILE BUTTON */
+div#profile-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: .5s;
+    color: white;
+    padding: 20px;
+    width: 260px;
+    font-size: 18px;
+}
+
+div#profile-button:hover {
+    background-color: #131313;
+    border: 1px solid rgba(151, 151, 151, 0.34);
+    border-radius: 5px;
+}
+
+div#profile-button-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+hr {
+    width: 90%;
+    border: .5px solid rgba(151, 151, 151, 0.34);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div#profile-button-dropdown {
+    flex-direction: column;
+}
+
+span.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: #cacaca;
+}
+
+span.user-profile:hover {
+    color: white;
+}
+
+span.user-profile > i {
+    background-color: rgba(151, 151, 151, 0.34);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+span.user-profile > i:hover {
+    background-color: rgb(151, 151, 151);
+}
+
+div#profile-button-dropdown > a {
+    color: #cacaca;
+    margin-bottom: 15px;
+}
+
+div#profile-button-dropdown > a:hover {
+    color: white;
+}

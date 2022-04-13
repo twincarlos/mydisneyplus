@@ -1,1 +1,25 @@
 /* TODO Add site wide styles */
+/* @font-face {
+    src: url(./fonts/AvenirLTStd-Black.otf);
+    font-family: Avenir-Black;
+} */
+
+@font-face {
+    src: url(./fonts/AvenirLTStd-Book.otf);
+    font-family: Avenir-Book;
+}
+
+/* @font-face {
+    src: url(./fonts/AvenirLTStd-Roman.otf);
+    font-family: Avenir-Roman;
+} */
+
+body {
+    font-family: Avenir-Book;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

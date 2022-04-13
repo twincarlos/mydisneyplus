@@ -1,6 +1,6 @@
 import './SelectProfile.css';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { setOneProfile } from '../../../store/session';
@@ -8,9 +8,11 @@ import { setOneProfile } from '../../../store/session';
 function SelectProfile ({ user, setAddProfile, setEditProfile }) {
     const dispatch = useDispatch();
     const history = useHistory();
+    const profile = useSelector(state => state.session.profile);
 
     return (
         <div>
+            { profile && <button onClick={() => history.push('/')}>Go back</button> }
             <button onClick={() => setEditProfile(true)}>Edit</button>
             <h1>Select a profile</h1>
             {
@@ -21,9 +23,7 @@ function SelectProfile ({ user, setAddProfile, setEditProfile }) {
                     </div>
                 ))
             }
-            <div>
-                <button onClick={() => setAddProfile(true)}>+</button>
-            </div>
+            <button onClick={() => setAddProfile(true)}>+</button>
         </div>
     );
 }

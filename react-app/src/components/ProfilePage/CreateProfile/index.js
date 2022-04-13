@@ -14,7 +14,7 @@ function CreateProfile ({ user, setAddProfile }) {
     const [error, setError] = useState('');
 
     const handleSubmit = async () => {
-        user.profiles.length ? await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : setAddProfile(false)) : await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : history.push('/'));
+        user.profiles.length ? await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : setAddProfile(false)) : await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : history.push('/profiles'));
     }
 
     return (
