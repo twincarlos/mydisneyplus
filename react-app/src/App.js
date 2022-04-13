@@ -47,9 +47,9 @@ function App() {
         <ProtectedRoute path='/profiles' exact={true} >
           <ProfilePage />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
+        <Route path='/' exact={true} >
           <Home />
-        </ProtectedRoute>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

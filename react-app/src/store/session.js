@@ -110,8 +110,7 @@ export const addOneProfile = data => async dispatch => {
     body: JSON.stringify(data)
   });
   const profile = await response.json();
-  if (profile.error) return profile.error;
-  dispatch(addProfile(profile));
+  if (!profile.error) dispatch(addProfile(profile));
   return profile;
 }
 
@@ -124,8 +123,7 @@ export const updateOneProfile = data => async dispatch => {
     body: JSON.stringify(data)
   });
   const profile = await response.json();
-  if (profile.error) return profile.error;
-  dispatch(updateProfile(profile));
+  if (!profile.error) dispatch(updateProfile(profile));
   return profile;
 }
 
@@ -134,8 +132,7 @@ export const deleteOneProfile = profileId => async dispatch => {
     method: 'DELETE'
   });
   const profile = await response.json();
-  if (profile.error) return profile.error;
-  dispatch(deleteProfile(profile));
+  if (!profile.error) dispatch(deleteProfile(profile));
   return profile;
 }
 

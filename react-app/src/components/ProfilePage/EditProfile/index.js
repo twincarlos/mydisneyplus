@@ -11,6 +11,7 @@ function EditProfile ({ user, setEditProfile }) {
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
     const [profileEdit, setProfileEdit] = useState(null);
+    const [error, setError] = useState("");
 
     return (
         <div>
@@ -28,6 +29,9 @@ function EditProfile ({ user, setEditProfile }) {
             {
                 showModal && (
                     <Modal onClose={() => setShowModal(false)}>
+                        {
+                            error && <p>{error}</p>
+                        }
                         <div>
                             <img style={{ width: 100 }} src={profileEdit.avatar} alt=''></img>
                             <input value={profileEdit.name} onChange={e => setProfileEdit({ profileId: profileEdit.profileId, name: e.target.value, avatar: profileEdit.avatar })}></input>
@@ -45,11 +49,15 @@ function EditProfile ({ user, setEditProfile }) {
                                ))
                             }
                             <button onClick={async () => {
-                                await dispatch(updateOneProfile(profileEdit)).then(() => setShowModal(false));
+                                await dispatch(updateOneProfile(profileEdit)).then(result => result.error ? setError(result.error) : setShowModal(false));
                             }}>Save</button>
                             <button onClick={async () => {
-                                await dispatch(deleteOneProfile(profileEdit.profileId)).then(() => setShowModal(false));
+                                await dispatch(deleteOneProfile(profileEdit.profileId)).then(result => result.error ? setError(result.error) : setShowModal(false));
                             }}>Delete</button>
+                            <button onClick={() => {
+                                setShowModal(false);
+                                setError('');
+                            }}>Cancel</button>
                         </div>
                     </Modal>
                 )

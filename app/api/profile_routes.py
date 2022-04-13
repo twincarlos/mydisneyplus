@@ -8,16 +8,22 @@ profile_routes = Blueprint("profiles", __name__)
 
 @profile_routes.route('', methods=['GET', 'POST'])
 def all_profiles():
-    profiles = Profile.query.filter(Profile.owner_id == current_user.id)
+    profiles = Profile.query.filter(Profile.owner_id == current_user.id).all()
 
     if request.method == 'GET':
         return [profile.to_dict() for profile in profiles]
 
     if request.method == 'POST':
         data = request.json
+        if len(profiles) == 5:
+            return { "error": "You may not have more than 5 profiles." }
+        if not len(data["name"]):
+            return { "error": "Please provide a name for your profile." }
         for profile in profiles:
             if profile.name == data["name"]:
                 return { "error": "Profile already exists." }
+        if not len(data["avatar"]):
+            return { "error": "Please select an avatar." }
         new_profile = Profile(
             owner_id = current_user.id,
             name = data["name"],
@@ -39,9 +45,13 @@ def crud_profiles(profile_id):
         return profile.to_dict()
 
     if request.method == 'PUT':
+        if not len(data["name"]):
+            return { "error": "Please provide a name for your profile." }
         for profile in profiles:
             if profile.name == data["name"]:
                 return { "error": "Profile already exists." }
+        if not len(data["avatar"]):
+            return { "error": "Please select an avatar." }
         profile.name = data["name"]
         profile.avatar = data["avatar"]
         db.session.commit()
