@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate()).then(user => {
-        if (user) user.current_profile_id ? dispatch(setOneProfile(user.current_profile_id)) : null
+        if (user) return user.current_profile_id ? dispatch(setOneProfile(user.current_profile_id)) : null
       });
       setLoaded(true);
     })();
