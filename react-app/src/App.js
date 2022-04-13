@@ -7,7 +7,9 @@ import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
-import { authenticate } from './store/session';
+import { authenticate, setOneProfile } from './store/session';
+import Home from './components/Home';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -15,7 +17,7 @@ function App() {
 
   useEffect(() => {
     (async() => {
-      await dispatch(authenticate());
+      await dispatch(authenticate()).then(user => user.current_profile_id ? dispatch(setOneProfile(user.current_profile_id)) : null);
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -40,8 +42,11 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
+        <ProtectedRoute path='/profiles' exact={true} >
+          <ProfilePage />
+        </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <Home />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

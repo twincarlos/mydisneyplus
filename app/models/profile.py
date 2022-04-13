@@ -19,5 +19,5 @@ class Profile(db.Model):
             'owner': self.owner_id,
             'name': self.name,
             'avatar': self.avatar,
-            'favorites': [favorite.to_dict() for favorite in favorites]
+            'favorites': [favorite.to_dict() for favorite in self.favorites]
         }

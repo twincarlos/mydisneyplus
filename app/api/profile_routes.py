@@ -1,22 +1,20 @@
 from flask import Blueprint, request
-from app.models import User, Profile
+from app.models import User, Profile, db
 from flask_login import current_user
 
 import json
 
 profile_routes = Blueprint("profiles", __name__)
 
-@profile_routes.route('/', methods=['GET', 'POST'])
+@profile_routes.route('', methods=['GET', 'POST'])
 def all_profiles():
-    profiles = Profile.query(Profile).filter(Profile.owner_id == current_user.id)
+    profiles = Profile.query.filter(Profile.owner_id == current_user.id)
 
     if request.method == 'GET':
         return [profile.to_dict() for profile in profiles]
 
     if request.method == 'POST':
         data = request.json
-        if len(data["avatar"]) == 0:
-            return { "error": "Please, select an avatar." }
         for profile in profiles:
             if profile.name == data["name"]:
                 return { "error": "Profile already exists." }
@@ -33,13 +31,14 @@ def all_profiles():
 def crud_profiles(profile_id):
     data = request.json
     profile = Profile.query.get(profile_id)
+    profiles = Profile.query.filter(Profile.owner_id == current_user.id).all()
 
     if request.method == 'GET':
+        current_user.current_profile_id = profile_id
+        db.session.commit()
         return profile.to_dict()
 
     if request.method == 'PUT':
-        if len(data["avatar"]) == 0:
-            return { "error": "Please, select an avatar." }
         for profile in profiles:
             if profile.name == data["name"]:
                 return { "error": "Profile already exists." }
@@ -51,6 +50,9 @@ def crud_profiles(profile_id):
     if request.method == 'DELETE':
         if len(profiles) == 1:
             return { "error": "You must have at least one profile." }
+        if current_user.current_profile_id == profile_id:
+            current_user.current_profile_id = None
+            db.session.commit()
         db.session.delete(profile)
         db.session.commit()
         return profile.to_dict()
@@ -65,7 +67,7 @@ def favorite_content(profile_id, content_id):
 
 @profile_routes.route('/<int:profile_id>/unfavorite/<int:content_id>', methods=['DELETE'])
 def unfavorite_content(profile_id, content_id):
-    favorite = Favorite.query(Favorite).filter(Favorite.profile_id == profile_id, Favorite.content_id == content_id).first()
+    favorite = Favorite.query.filter(Favorite.profile_id == profile_id, Favorite.content_id == content_id).first()
     db.session.delete(favorite)
     db.session.commit()
     content = Content.query.get(content_id)

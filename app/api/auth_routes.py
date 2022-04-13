@@ -51,6 +51,8 @@ def logout():
     """
     Logs a user out
     """
+    current_user.current_profile_id = None
+    db.session.commit()
     logout_user()
     return {'message': 'User logged out'}
 
@@ -89,6 +91,7 @@ def sign_up():
         email=request.form['email'],
         profile_picture=url,
         password=request.form['password'],
+        current_profile_id=None
     )
     db.session.add(user)
     db.session.commit()

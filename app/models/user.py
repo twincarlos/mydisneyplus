@@ -11,6 +11,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     profile_picture = db.Column(db.String, nullable=False)
+    current_profile_id = db.Column(db.Integer)
 
     profiles = db.relationship("Profile", back_populates="owner", cascade="all, delete")
     contents = db.relationship("Content", back_populates="creator", cascade="all, delete")
@@ -32,5 +33,6 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'profile_picture': self.profile_picture,
-            'profiles': [profile.to_dict() for profile in self.profiles]
+            'profiles': [profile.to_dict() for profile in self.profiles],
+            'current_profile_id': self.current_profile_id
         }
