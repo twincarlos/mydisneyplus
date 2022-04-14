@@ -1,0 +1,69 @@
+div#splash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../assets/splash-background.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a#login {
+    color: #F9F9F9;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    background-color: #000000CC;
+    padding: 6px 20px;
+    height: 45px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+a#login:hover {
+    background-color: #F9F9F9;
+    color: #000000CC;
+}
+
+div#splash > div {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    text-align: center;
+    align-items: center;
+}
+
+div#splash > div > a {
+    background-color: #0063E5;
+    color: #F9F9F9;
+    border: none;
+    height: 80px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: .2s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#splash > div > a:hover {
+    background-color: #0072D2;
+}
+
+div#splash > div > p {
+    margin-bottom: 40px;
+}

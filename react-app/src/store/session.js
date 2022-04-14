@@ -164,6 +164,7 @@ export const signUp = (username, email, password, repeatPassword, profilePicture
 }
 
 export default function reducer(state = initialState, action) {
+  let newState;
   switch (action.type) {
     case SET_USER:
       state.user = action.payload;
@@ -177,8 +178,9 @@ export default function reducer(state = initialState, action) {
       state.user.current_profile_id = action.profile.id;
       return state;
     case ADD_PROFILE:
-      state.user.profiles = [...state.user.profiles, action.profile]
-      return state;
+      newState = state.user;
+      newState.profiles = [...newState.profiles, action.profile];
+      return newState;
     case UPDATE_PROFILE:
       if (state.profile?.id === action.profile.id) state.profile = action.profile;
       state.user.profiles = state.user.profiles.map(profile => profile.id === action.profile.id ? action.profile : profile);

@@ -32,28 +32,6 @@ nav > a > i {
     margin-bottom: 6px;
 }
 
-/* a#login {
-    color: #F9F9F9;
-    position: absolute;
-    right: 50px;
-    background-color: #000000CC;
-    padding: 6px 20px;
-    height: 45px;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-size: 22px;
-    letter-spacing: 1px;
-    transition: .2s;
-}
-
-a#login:hover {
-    background-color: #F9F9F9;
-    color: #000000CC;
-} */
-
 /* PROFILE BUTTON */
 div#profile-button {
     position: absolute;

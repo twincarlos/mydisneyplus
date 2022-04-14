@@ -1,4 +1,3 @@
-import './Home.css';
 import ContentGallery from './ContentGallery';
 import Splash from './Splash';
 
