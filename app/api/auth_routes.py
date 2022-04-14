@@ -4,7 +4,6 @@ from app.forms import LoginForm
 # from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.aws import upload_file_to_s3, allowed_file, get_unique_filename
-from colorama import Fore, Back, Style
 
 auth_routes = Blueprint('auth', __name__)
 

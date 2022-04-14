@@ -1,8 +1,6 @@
 from flask import Blueprint, request
 from app.models import User, Profile, db
 from flask_login import current_user
-from colorama import Fore, Style
-
 import json
 
 profile_routes = Blueprint("profiles", __name__)
