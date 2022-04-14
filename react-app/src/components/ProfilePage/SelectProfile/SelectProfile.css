@@ -1,0 +1,93 @@
+div#select-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1d29;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div#select-profile > nav {
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#select-profile > nav > button {
+    background-color: #40424A;
+    color: #F9F9F9;
+    border: none;
+    transition: .5s;
+    margin-right: 40px;
+    font-size: 18px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+div#select-profile > nav > button:hover {
+    background-color: #51545d;
+}
+
+div#whos-watching {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+}
+
+div#whos-watching > h1 {
+    font-size: 40px;
+    margin-bottom: 100px;
+}
+
+div#profile-list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+div.user-profile {
+    text-align: center;
+    font-size: 30px;
+    margin: 0 20px;
+}
+
+div.user-profile > img {
+    width: 150px;
+    margin-bottom: -10px;
+    cursor: pointer;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+div.user-profile > i {
+    background-color: #F9F9F91A;
+    font-size: 48px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid transparent;
+    transition: .5s;
+    cursor: pointer;
+}
+
+div.user-profile > i:hover, div.user-profile > img:hover {
+    background-color: #f9f9f95b;
+    border: 5px solid #F9F9F9;
+    transform: scale(1.05);
+}

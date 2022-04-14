@@ -22,14 +22,10 @@
 
 #modal-content {
     position: absolute;
-    background-color: #585858;
     border-radius: 5px;
 
     display: flex;
     justify-content: center;
 
     overflow-x: hidden;
-    min-width: 40vw;
-    max-width: 90vw;
-    max-height: 90vh;
 }

@@ -2,10 +2,13 @@ import './NavBar.css';
 
 import LogoutButton from '../auth/LogoutButton';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+import { setOneProfile } from '../../store/session';
 
 function ProfileButton ({ user, profile }) {
     const [showMenu, setShowMenu] = useState('none');
+    const dispatch = useDispatch();
     const history = useHistory();
 
     return (
@@ -18,20 +21,23 @@ function ProfileButton ({ user, profile }) {
                 <hr></hr>
                 <div id='user-profiles'>
                     {
-                        user.profiles.map(profile => (
-                            <span className='user-profile' key={profile.id}>
-                                <img style={{ width: 60, marginRight: 15 }} src={profile.avatar} alt=''></img>
-                                <p>{profile.name}</p>
+                        user.profiles.map(userProfile => (
+                            userProfile.id !== profile.id &&
+                            <span onClick={() => dispatch(setOneProfile(userProfile.id))} className='user-profile' key={userProfile.id}>
+                                <img style={{ width: 60, marginRight: 15 }} src={userProfile.avatar} alt=''></img>
+                                <p>{userProfile.name}</p>
                             </span>
                         ))
                     }
-                    { user.profiles.length < 5 && <span className='user-profile' onClick={() => history.push('/profiles')}>
-                        <i className="fas fa-plus"></i>
-                        <p>Add Profile</p>
-                    </span> }
+                    {
+                        user.profiles.length < 5 && <span className='user-profile' onClick={() => history.push('/create-profile')}>
+                            <i className="fas fa-plus"></i>
+                            <p>Add Profile</p>
+                        </span>
+                    }
                 </div>
-                <NavLink to='/profiles' exact={true} activeClassName='active'>
-                    Profiles
+                <NavLink to='/edit-profile' exact={true} activeClassName='active'>
+                    Edit Profiles
                 </NavLink>
                 <LogoutButton />
             </div>

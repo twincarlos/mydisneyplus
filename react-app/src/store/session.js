@@ -180,11 +180,11 @@ export default function reducer(state = initialState, action) {
       state.user.profiles = [...state.user.profiles, action.profile]
       return state;
     case UPDATE_PROFILE:
-      if (state.profile.id === action.profile.id) state.profile = action.profile;
+      if (state.profile?.id === action.profile.id) state.profile = action.profile;
       state.user.profiles = state.user.profiles.map(profile => profile.id === action.profile.id ? action.profile : profile);
       return state;
     case DELETE_PROFILE:
-      if (state.profile.id === action.profile.id) state.profile = null;
+      if (state.profile?.id === action.profile.id) state.profile = null;
       if (state.user.current_profile_id === action.profile.id) state.user.current_profile_id = null;
       state.user.profiles = state.user.profiles.filter(profile => profile.id !== action.profile.id);
       return state;

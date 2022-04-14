@@ -24,7 +24,7 @@ nav > a > p {
 }
 
 nav > a > p:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #F9F9F9;
 }
 
 nav > a > i {
@@ -60,7 +60,7 @@ div#profile-button {
     top: 0;
     right: 0;
     transition: .5s;
-    color: white;
+    color: #F9F9F9;
     padding: 20px;
     width: 260px;
     font-size: 18px;
@@ -99,7 +99,7 @@ span.user-profile {
 }
 
 span.user-profile:hover {
-    color: white;
+    color: #F9F9F9;
 }
 
 span.user-profile > i {
@@ -124,5 +124,5 @@ div#profile-button-dropdown > a {
 }
 
 div#profile-button-dropdown > a:hover {
-    color: white;
+    color: #F9F9F9;
 }

@@ -1,5 +1,5 @@
 const avatars = {
-    kids: [
+    Kids: [
         'https://i.imgur.com/Kql7cQn.png',
         'https://i.imgur.com/pmfm5nh.png',
         'https://i.imgur.com/EVLuAJu.png',

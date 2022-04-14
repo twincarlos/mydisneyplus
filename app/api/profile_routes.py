@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from app.models import User, Profile, db
 from flask_login import current_user
+from colorama import Fore, Style
 
 import json
 
@@ -47,8 +48,8 @@ def crud_profiles(profile_id):
     if request.method == 'PUT':
         if not len(data["name"]):
             return { "error": "Please provide a name for your profile." }
-        for profile in profiles:
-            if profile.name == data["name"]:
+        for prof in profiles:
+            if prof.name == data["name"] and prof.id != profile_id:
                 return { "error": "Profile already exists." }
         if not len(data["avatar"]):
             return { "error": "Please select an avatar." }
