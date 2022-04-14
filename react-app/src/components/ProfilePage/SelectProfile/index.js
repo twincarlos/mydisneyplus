@@ -2,7 +2,7 @@ import './SelectProfile.css';
 import disneyPlusLogo from '../../../assets/disney-plus-logo.png';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 
 import { setOneProfile } from '../../../store/session';
 
@@ -10,6 +10,8 @@ function SelectProfile () {
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector(state => state.session.user);
+
+    if (!user.profiles.length) return <Redirect to='/create-profile' />;
 
     return (
         <div id='select-profile'>
@@ -28,10 +30,13 @@ function SelectProfile () {
                             </div>
                         ))
                     }
-                    <div className='user-profile'>
-                        <i onClick={() => history.push('create-profile')} className="fas fa-plus"></i>
-                        <p>Add Profile</p>
-                    </div>
+                    {
+                        user.profiles.length < 5 &&
+                        <div className='user-profile'>
+                            <i onClick={() => history.push('create-profile')} className="fas fa-plus"></i>
+                            <p>Add Profile</p>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

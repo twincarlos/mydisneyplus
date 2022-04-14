@@ -17,8 +17,7 @@ function App() {
 
   useEffect(() => {
     (async() => {
-      await dispatch(authenticate()).then(user => user?.current_profile_id ? dispatch(setOneProfile(user.current_profile_id)) : null);
-      setLoaded(true);
+      await dispatch(authenticate()).then(data => data?.current_profile_id ? dispatch(setOneProfile(data.current_profile_id)) : null).then(() => setLoaded(true));
     })();
   }, [dispatch]);
 
@@ -36,14 +35,14 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path='/profiles' exact={true} >
-          { user ? (!user.profiles.length ? <Redirect to='/create-profile' /> : <SelectProfile />) : <Redirect to='/login' /> }
+          { user ? <SelectProfile /> : <Redirect to='/login' /> }
           <SelectProfile />
         </ProtectedRoute>
         <ProtectedRoute path='/create-profile' exact={true} >
           <CreateProfile />
         </ProtectedRoute>
         <ProtectedRoute path='/edit-profile' exact={true} >
-          { user ? (!user.profiles.length ? <Redirect to='/create-profile' /> : <EditProfile />) : <Redirect to='/login' /> }
+        { user ? <EditProfile /> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />

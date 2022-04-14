@@ -20,7 +20,7 @@ function CreateProfile () {
             <nav>
                 <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
                 <span>
-                    <button onClick={async () => await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : history.push('/profile'))} style={{ backgroundColor: '#0072D2' }}>SAVE</button>
+                    <button onClick={async () => await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : history.push('/profiles'))} style={{ backgroundColor: '#0072D2' }}>SAVE</button>
                     { user.profiles.length ? <button onClick={() => {
                         history.push('/profiles');
                         setError('');

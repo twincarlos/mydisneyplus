@@ -3,7 +3,7 @@ import './EditProfile.css';
 import { Modal } from "../../../context/Modal";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import avatars from '../avatars';
 import disneyPlusLogo from '../../../assets/disney-plus-logo.png';
 
@@ -16,6 +16,8 @@ function EditProfile () {
     const [error, setError] = useState('');
     const user = useSelector(state => state.session.user);
     const history = useHistory();
+
+    if (!user.profiles.length) return <Redirect to='/create-profile' />;
 
     return (
         <div id='edit-profile'>
@@ -45,14 +47,17 @@ function EditProfile () {
                             </div>
                         ))
                     }
-                    <div className='user-profile'>
-                        <i onClick={() => {
-                            setProfileEdit(null);
-                            setError('');
-                            history.push('/create-profile');
-                        }} className="fas fa-plus"></i>
-                        <p>Add Profile</p>
-                    </div>
+                    {
+                        user.profiles.length < 5 && 
+                        <div className='user-profile'>
+                            <i onClick={() => {
+                                setProfileEdit(null);
+                                setError('');
+                                history.push('/create-profile');
+                            }} className="fas fa-plus"></i>
+                            <p>Add Profile</p>
+                        </div>
+                    }
                 </div>
             </div>
             {
