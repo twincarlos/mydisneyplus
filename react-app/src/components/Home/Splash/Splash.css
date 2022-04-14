@@ -1,9 +1,9 @@
 div#splash {
+    background-image: url('../../../assets/splash-background.jpeg');
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../../../assets/splash-background.jpeg');
-    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;

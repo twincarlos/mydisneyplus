@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import { login } from '../../store/session';
 
 import './auth.css';
+import disneyPlusLogo from '../../assets/disney-plus-logo.png';
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -33,34 +34,36 @@ const LoginForm = () => {
   }
 
   return (
-    <form id='login' onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
-    </form>
+    <div id='login'>
+      <img style={{ width: 200 }} src={disneyPlusLogo} alt=''></img>
+      <h1>Log in with your email</h1>
+      <form onSubmit={onLogin}>
+        <div id='errors'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
+          <input
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+          />
+          <input
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+          />
+          <button type='submit'>Login</button>
+      </form>
+      <span>
+        <p style={{ marginRight: 10, color: '#cacaca' }}>New to MyDisney+?</p>
+        <NavLink to='/signup'>Sign up</NavLink>
+      </span>
+    </div>
   );
 };
 
