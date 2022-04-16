@@ -1,11 +1,23 @@
 import './ImageSlider.css';
 
 function ImageSlider ({ contents }) {
+    const contentsWithBanner = contents.filter(content => content.banner);
+
     return (
         <div id='image-slider-container'>
+            <button className='movers left'>{"<"}</button>
             <div id='image-slider'>
-                { contents.map((content, idx) => idx < 10 && <img src={content.banner} alt=''></img>) }
+                {
+                    contentsWithBanner.map(content => (
+                        <div className='content-container' key={content.id}>
+                            <div className='banner-container' style={{ backgroundImage: `url('${content.banner}')` }}>
+                                <img className='logo' src={content.logo}></img>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
+            <button className='movers right'>{">"}</button>
         </div>
     );
 }
