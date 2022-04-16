@@ -31,7 +31,7 @@ function CreateProfile () {
                 { error && <p style={{ fontSize: 30 }}>{error}</p> }
                 <h1>What is your name?</h1>
                 <input value={name} onChange={e => setName(e.target.value)}></input>
-                <h1 style={{ marginBottom: 100 }}>Choose Avatar</h1>
+                <h1 style={{ marginBottom: 50 }}>Choose Avatar</h1>
                 {
                     Object.entries(avatars).map(([category, avatars], idx) => (
                         <div className='avatar-category' key={idx}>

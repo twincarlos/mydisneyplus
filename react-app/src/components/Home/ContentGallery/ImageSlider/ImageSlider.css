@@ -1,0 +1,69 @@
+div#image-slider {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    /* animation: slidein 50s ease 0s infinite forwards normal; */
+}
+
+div#image-slider > img {
+    width: 90%;
+    margin: 0 10px;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: .5s;
+}
+
+div#image-slider > img:hover {
+    border: 5px solid #F9F9F9;
+}
+
+@keyframes slidein {
+    0% {
+        right: 0vw;
+    }
+    13% {
+        right: 0vw;
+    }
+    14% {
+        right: 90vw;
+    }
+    26% {
+        right: 90vw;
+    }
+    27% {
+        right: 180vw;
+    }
+    39% {
+        right: 180vw;
+    }
+    40% {
+        right: 270vw;
+    }
+    52% {
+        right: 270vw;
+    }
+    53% {
+        right: 360vw;
+    }
+    65% {
+        right: 360vw;
+    }
+    66% {
+        right: 450vw;
+    }
+    78% {
+        right: 450vw;
+    }
+    79% {
+        right: 540vw;
+    }
+    91% {
+        right: 540vw;
+    }
+    92% {
+        right: 630vw;
+    }
+    100% {
+        right: 630vw;
+    }
+}

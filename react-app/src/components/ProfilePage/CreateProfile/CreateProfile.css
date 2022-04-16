@@ -62,7 +62,7 @@ div#create-profile > div > input {
 }
 
 div.avatar-category > img {
-    width: 425px;
+    width: 300px;
     transition: .5s;
     border-radius: 50%;
     border: 5px solid transparent;

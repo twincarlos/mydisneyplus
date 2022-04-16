@@ -16,14 +16,10 @@ function App() {
   const user = useSelector(state => state.session.user);
 
   useEffect(() => {
-    (async() => {
-      await dispatch(authenticate()).then(data => data?.current_profile_id ? dispatch(setOneProfile(data.current_profile_id)) : null).then(() => setLoaded(true));
-    })();
+    (async() => await dispatch(authenticate()).then(data => data?.current_profile_id ? dispatch(setOneProfile(data.current_profile_id)) : null).then(() => setLoaded(true)))();
   }, [dispatch]);
 
-  if (!loaded) {
-    return null;
-  }
+  if (!loaded) return null;
 
   return (
     <BrowserRouter>

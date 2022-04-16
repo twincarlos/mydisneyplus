@@ -10,8 +10,11 @@ class Content(db.Model):
     content_type = db.Column(db.String, nullable=False)
     title = db.Column(db.String, unique=True, nullable=False)
     description = db.Column(db.Text, nullable=False)
-    thumbnail = db.Column(db.String, nullable=False)
     media = db.Column(db.String, nullable=False)
+    logo = db.Column(db.String)
+    banner = db.Column(db.String)
+    thumbnail = db.Column(db.String)
+    background_picture = db.Column(db.String)
     categories = db.Column(db.String, nullable=False)
 
     creator = db.relationship("User", back_populates="contents")
@@ -22,13 +25,15 @@ class Content(db.Model):
             'id': self.id,
             'creator': {
                 'id': self.creator.id,
-                'username': self.creator.usernmae,
-                'profile_picture': self.creator.profile_picture
+                'username': self.creator.username
             },
             'content_type': self.content_type,
             'title': self.title,
             'description': self.description,
-            'thumbnail': self.thumbnail,
             'media': self.media,
+            'logo': self.logo,
+            'banner': self.banner,
+            'thumbnail': self.thumbnail,
+            'background_picture': self.background_picture,
             'categories': self.categories
         }

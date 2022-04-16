@@ -54,6 +54,32 @@ export const authenticate = () => async (dispatch) => {
   }
 }
 
+export const signUp = (username, email, password, repeatPassword) => async (dispatch) => {
+  const formData = new FormData();
+  formData.append("username", username);
+  formData.append("email", email);
+  formData.append("password", password);
+  formData.append("repeat_password", repeatPassword);
+
+  const response = await fetch('/api/auth/signup', {
+    method: 'POST',
+    body: formData
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(setUser(data))
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
     method: 'POST',
@@ -134,33 +160,6 @@ export const deleteOneProfile = profileId => async dispatch => {
   const profile = await response.json();
   if (!profile.error) dispatch(deleteProfile(profile));
   return profile;
-}
-
-export const signUp = (username, email, password, repeatPassword, profilePicture) => async (dispatch) => {
-  const formData = new FormData();
-  formData.append("username", username);
-  formData.append("email", email);
-  formData.append("password", password);
-  formData.append("repeat_password", repeatPassword);
-  formData.append("profile_picture", profilePicture);
-
-  const response = await fetch('/api/auth/signup', {
-    method: 'POST',
-    body: formData
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    }
-  } else {
-    return ['An error occurred. Please try again.']
-  }
 }
 
 export default function reducer(state = initialState, action) {
