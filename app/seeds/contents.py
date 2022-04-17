@@ -33,7 +33,7 @@ def seed_contents():
         title="The Simpsons",
         description="This animated comedy focuses on the eponymous family in the town of Springfield. The head of the Simpson family, Homer, is not a typical family man. A nuclear-plant employee, he does his best to lead his family but often finds that they are leading him. The family includes loving, blue-haired matriarch Marge, troublemaking son Bart, overachieving daughter Lisa and baby Maggie.",
         media="https://www.youtube.com/watch?v=_jgYEYERYFQ",
-        logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/995C7F1DAFB6711C3F855C7C5FAFB27FF45B0B40FF23782040E25B68EEB8A1C8/scale?width=1920&aspectRatio=1.78&format=pngt",
+        logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/995C7F1DAFB6711C3F855C7C5FAFB27FF45B0B40FF23782040E25B68EEB8A1C8/scale?width=1920&aspectRatio=1.78&format=png",
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4F0F95D5AE5AF84A090E26BB2CD2633D7038BF6A1528804762BEA87FE4F6A738/compose?width=2880&aspectRatio=3.91&format=jpeg&label=391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8258E24392B56F8E83E59BDEA7F3660085BA5A7022B29FD5A41E5ECB6BAC3AD1/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5949F0FEA2D3A5F8BD0B1440FFAF993528BF526E5476B468F4E0FBEDD7C98E6D/scale?width=2880&aspectRatio=1.78&format=jpeg",

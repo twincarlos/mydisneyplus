@@ -1,0 +1,184 @@
+div#carousel-container {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    height: 520px;
+    margin-top: 10px;
+}
+
+div.content-container {
+    width: 91vw;
+    height: 100%;
+    background-size: cover;
+    margin-right: 20px;
+    box-sizing: border-box;
+    border: 5px solid none;
+    transition: .5s;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+div.content-container:hover {
+    border: 5px solid #F9F9F9;
+}
+
+div.banner-container {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+img.logo {
+    position: relative;
+    width: 20vw;
+    top: 100px;
+    left: 100px;
+}
+
+/* ANIMATIONS */
+
+button.movers {
+    position: absolute;
+    top: 300px;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    transition: .5s;
+    font-size: 50px;
+    color: transparent;
+    cursor: pointer;
+}
+
+button.movers:hover {
+    color: #F9F9F9;
+}
+
+button.movers.left {
+    left: 10px;
+    z-index: 1;
+}
+
+button.movers.right {
+    right: 10px;
+}
+
+div#carousel {
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.position1 {
+    animation: .2s linear 5s 1 running position1;
+}
+.position2 {
+    animation: .2s linear 5s 1 running position2;
+}
+.position3 {
+    animation: .2s linear 5s 1 running position3;
+}
+.position4 {
+    animation: .2s linear 5s 1 running position4;
+}
+.position5 {
+    animation: .2s linear 5s 1 running position5;
+}
+.position6 {
+    animation: .2s linear 5s 1 running position6;
+}
+.position7 {
+    animation: .2s linear 5s 1 running position7;
+}
+.position8 {
+    animation: .2s linear 5s 1 running position8;
+}
+.position9 {
+    animation: .2s linear 5s 1 running position9;
+}
+.position10 {
+    animation: .5s linear 5s 1 running position10;
+}
+
+@keyframes position1 {
+    0% {
+        right: -3vw;
+    }
+    100% {
+        right: 88.8vw;
+    }
+}
+@keyframes position2 {
+    0% {
+        right: 88.8vw;
+    }
+    100% {
+        right: 180.6vw;
+    }
+}
+@keyframes position3 {
+    0% {
+        right: 180.6vw;
+    }
+    100% {
+        right: 272.4vw;
+    }
+}
+@keyframes position4 {
+    0% {
+        right: 272.4vw;
+    }
+    100% {
+        right: 364.2vw;
+    }
+}
+@keyframes position5 {
+    0% {
+        right: 364.2vw;
+    }
+    100% {
+        right: 456vw;
+    }
+}
+@keyframes position6 {
+    0% {
+        right: 456vw;
+    }
+    100% {
+        right: 547.8vw;
+    }
+}
+@keyframes position7 {
+    0% {
+        right: 547.8vw;
+    }
+    100% {
+        right: 639.6vw;
+    }
+}
+@keyframes position8 {
+    0% {
+        right: 639.6vw;
+    }
+    100% {
+        right: 731.4vw;
+    }
+}
+@keyframes position9 {
+    0% {
+        right: 731.4vw;
+    }
+    100% {
+        right: 823.2vw;
+    }
+}
+@keyframes position10 {
+    0% {
+        right: 823.2vw;
+    }
+    100% {
+        right: -3vw;
+    }
+}

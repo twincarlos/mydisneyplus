@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getAllContents } from '../../../store/content';
 import NavBar from '../../NavBar';
-import ImageSlider from './ImageSlider';
+import Carousel from './Carousel';
 
 function ContentGallery() {
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function ContentGallery() {
     return (
         <div id='content-gallery'>
             <NavBar />
-            <ImageSlider contents={contents} />
+            <Carousel contents={contents} />
         </div>
     );
 }
