@@ -5,18 +5,18 @@ from app.models import db, User
 def seed_users():
     disney = User(
         username='Disney', email='disney@aa.io', password='password', current_profile_id=None)
-    marvel = User(
-        username='Marvel', email='marvel@aa.io', password='password', current_profile_id=None)
     pixar = User(
         username='Pixar', email='pixar@aa.io', password='password', current_profile_id=None)
+    marvel = User(
+        username='Marvel', email='marvel@aa.io', password='password', current_profile_id=None)
     starwars = User(
         username='Star Wars', email='starwars@aa.io', password='password', current_profile_id=None)
     natgeo = User(
         username='NatGeo', email='natgeo@aa.io', password='password', current_profile_id=None)
 
     db.session.add(disney)
-    db.session.add(marvel)
     db.session.add(pixar)
+    db.session.add(marvel)
     db.session.add(starwars)
     db.session.add(natgeo)
 

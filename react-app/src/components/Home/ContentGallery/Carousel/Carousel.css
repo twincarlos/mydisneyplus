@@ -37,6 +37,21 @@ img.logo {
     left: 100px;
 }
 
+div#carousel-dots {
+    position: absolute;
+    right: 160px;
+    top: 53vh;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: rgb(150, 158, 171);
+}
+
+div#carousel-dots > i.current {
+    color: rgb(249, 249, 249);
+}
+
 /* ANIMATIONS */
 
 button.movers {

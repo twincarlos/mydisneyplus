@@ -10,7 +10,7 @@ div#content-gallery {
 
 div#creators-container {
     position: relative;
-    width: 85%;
+    width: 86%;
     height: 300px;
     margin: auto;
     display: flex;
@@ -19,10 +19,11 @@ div#creators-container {
 }
 
 div.creator-container {
-    width: 350px;
+    position: relative;
+    width: 360px;
+    height: 201px;
     aspect-ratio: 16 / 9;
     border-radius: 15px;
-    height: 200px;
     background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
@@ -31,12 +32,11 @@ div.creator-container {
 }
 
 div.creator-container:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     border: 5px solid rgb(119, 120, 124);
 }
 
 div.creator-container > img {
-    width: 100%;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -44,8 +44,8 @@ div.creator-container > img {
 
 div.creator-container > video {
     position: relative;
-    top: -202px;
     width: 100%;
-    border-radius: 5px;
-    height: 200px;
+    border-radius: 10px;
+    margin-top: -190px;
+    top: -20px;
 }

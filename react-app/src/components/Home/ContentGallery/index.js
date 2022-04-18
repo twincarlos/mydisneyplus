@@ -8,14 +8,14 @@ import NavBar from '../../NavBar';
 import Carousel from './Carousel';
 
 import disneyVideo from '../../../assets/videos/disney.mp4';
-import marvelVideo from '../../../assets/videos/marvel.mp4';
 import pixarVideo from '../../../assets/videos/pixar.mp4';
+import marvelVideo from '../../../assets/videos/marvel.mp4';
 import starwarsVideo from '../../../assets/videos/starwars.mp4';
 import natgeoVideo from '../../../assets/videos/natgeo.mp4';
 
 import disneyLogo from '../../../assets/logos/disney.png';
-import marvelLogo from '../../../assets/logos/marvel.png';
 import pixarLogo from '../../../assets/logos/pixar.png';
+import marvelLogo from '../../../assets/logos/marvel.png';
 import starwarsLogo from '../../../assets/logos/starwars.png';
 import natgeoLogo from '../../../assets/logos/natgeo.png';
 
@@ -27,8 +27,8 @@ function ContentGallery() {
 
     const creators = [
         { id: 1, logo: disneyLogo, video: disneyVideo },
-        { id: 2, logo: marvelLogo, video: marvelVideo },
-        { id: 3, logo: pixarLogo, video: pixarVideo },
+        { id: 2, logo: pixarLogo, video: pixarVideo },
+        { id: 3, logo: marvelLogo, video: marvelVideo },
         { id: 4, logo: starwarsLogo, video: starwarsVideo },
         { id: 5, logo: natgeoLogo, video: natgeoVideo }
     ];

@@ -29,6 +29,14 @@ function Carousel ({ contents }) {
                     ))
                 }
             </div>
+            <div id='carousel-dots'>
+                {
+                    contentsWithBanner.map((content, idx) => <i onClick={() => {
+                        setPosition(idx + 1);
+                        setRight(((idx * 91.8).toFixed(1)) - 3);
+                    }} key={content.id} className={`fas fa-circle ${position === idx + 1 ? 'current' : null}`}></i>)
+                }
+            </div>
             { position < 10 && <button className='movers right' onClick={() => {
                 setPosition(position + 1);
                 setRight((Number(right) + 91.8).toFixed(1));
