@@ -9,9 +9,9 @@ const initialState = { contents: null, content: null };
 
 export const getAllContents = () => async dispatch => {
     const response = await fetch('/api/contents');
-    const data = await response.json();
-    dispatch(getContents(data.contents));
-    return data.contents;
+    const contents = await response.json();
+    dispatch(getContents(contents));
+    return contents;
 }
 
 export default function reducer(state = initialState, action) {

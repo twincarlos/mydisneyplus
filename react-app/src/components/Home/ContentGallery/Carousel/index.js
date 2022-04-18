@@ -3,13 +3,12 @@ import './Carousel.css';
 import { useState } from 'react';
 
 function Carousel ({ contents }) {
-    const contentsWithBanner = contents.filter(content => content.banner);
     const [position, setPosition] = useState(1);
     const [right, setRight] = useState('-3');
 
     const whichPosition = () => {
         position === 10 ? setPosition(1) : setPosition(position + 1);
-        right === '823.2' ? setRight('-3') : setRight((Number(right) + 91.8).toFixed(1));
+        right === '823.2' ? setRight('-3') : setRight(((Number(right) + 91.8).toFixed(1)).toString());
     };
 
     return (
@@ -20,7 +19,7 @@ function Carousel ({ contents }) {
             }}><i className="fas fa-chevron-left"></i></button> }
             <div id='carousel' style={{ right: `${right}vw` }} className={`position${position}`} onAnimationEnd={whichPosition}>
                 {
-                    contentsWithBanner.map(content => (
+                    contents.map(content => (
                         <div className='content-container' key={content.id}>
                             <div className='banner-container' style={{ backgroundImage: `url('${content.banner}')` }}>
                                 <img className='logo' src={content.logo} alt=''></img>
@@ -31,9 +30,9 @@ function Carousel ({ contents }) {
             </div>
             <div id='carousel-dots'>
                 {
-                    contentsWithBanner.map((content, idx) => <i onClick={() => {
+                    contents.map((content, idx) => <i onClick={() => {
                         setPosition(idx + 1);
-                        setRight(((idx * 91.8).toFixed(1)) - 3);
+                        setRight((((idx * 91.8).toFixed(1)) - 3).toString());
                     }} key={content.id} className={`fas fa-circle ${position === idx + 1 ? 'current' : null}`}></i>)
                 }
             </div>

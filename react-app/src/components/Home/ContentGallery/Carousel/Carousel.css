@@ -1,7 +1,6 @@
 div#carousel-container {
     display: flex;
     align-items: center;
-    overflow-x: scroll;
     height: 520px;
     margin-top: 10px;
 }
@@ -40,7 +39,7 @@ img.logo {
 div#carousel-dots {
     position: absolute;
     right: 160px;
-    top: 53vh;
+    top: 52vh;
     width: 250px;
     display: flex;
     justify-content: space-between;

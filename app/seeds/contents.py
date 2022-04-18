@@ -13,7 +13,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/411A8CF66D2A2B16759AF9CA2390C054E153FA1F6790D465EC54B7ECC13F8AF5/compose?width=2880&aspectRatio=3.91&format=jpeg&label=disneyplusoriginal_391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4F96E93AE760EF7062D5BB813353CBAA63994A491EAC5AEC24209D61B724FAF1/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/572864A0226D1595C18FD4D9B1398BBB0A354092DF5EEE7FF0FAAC71E229FA6D/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     nate = Content(
         creator_id=1,
@@ -25,7 +24,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/23CEC1B32ED414B352C11E426C607B2C4E40A6C1B94753023F5A580806331904/compose?width=2880&aspectRatio=3.91&format=jpeg&label=disneyplusoriginal_391",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/ECFC43F9A606D4CBB7AE9AD16353758479FBA3B0F1CEB84E04B6241459739A2F/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A18258286904A50AB665B6BA6B76307B854CA3502147D9F6BF4E72031B4FD808/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     simpsons = Content(
         creator_id=1,
@@ -37,7 +35,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4F0F95D5AE5AF84A090E26BB2CD2633D7038BF6A1528804762BEA87FE4F6A738/compose?width=2880&aspectRatio=3.91&format=jpeg&label=391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8258E24392B56F8E83E59BDEA7F3660085BA5A7022B29FD5A41E5ECB6BAC3AD1/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5949F0FEA2D3A5F8BD0B1440FFAF993528BF526E5476B468F4E0FBEDD7C98E6D/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     puppies = Content(
         creator_id=1,
@@ -49,7 +46,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4FD15BD4C47C246AF5739FB0E19E50426528D2C367EB772D8F12F5B635963C5B/compose?width=2880&aspectRatio=3.91&format=jpeg&label=391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/607ED84F14B07E8609E67821185D9B129D0EE8B355B6D3FAEA2E7354204F647E/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/3C23E10C7A6113E5780720C6992B81152C96EF40363A486B947C3BA796739D56/scale?width=1920&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
 
     # MARVEL
@@ -63,7 +59,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/51BA6DC1435E904C9A36BEC57BFBA797D9E59CC812EA855821CBB58EC9329BD6/compose?width=2880&aspectRatio=3.91&format=jpeg&label=disneyplusoriginal_391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/14EDC8643672C751EEF6FE9C0CD92065CCC2324981EFCC927375C3450D790122/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7CBE13FF54314360482A2082861810F39B94CBFEA27E54054FF886490EEDE70C/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     spidey = Content(
         creator_id=2,
@@ -75,7 +70,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A219DAC8ABAF36DC5B2B4DAFCA0D41E8EA695736031D20459FFC0EDCD15D33A3/compose?width=2880&aspectRatio=3.91&format=jpeg&label=391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/69F7759BE414BD77AF57D52D6C233E9FB3D4ED1DD598BCC93EAFA148DD4D3D49/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/39910FA1CB8733FEF073CCC847D886C2E8865B72D42086CF8FC2D4ED37D4AD88/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     eternals = Content(
         creator_id=2,
@@ -86,7 +80,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/998140E8ED2E3A7644484D564C861D61CFFCCCE204BD2A64A7C421905C8B3ECB/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1250B3C9EEE8DA6888470F1DC25A9DD9C07A876E49168AB22359A295D4E1D803/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1CF2A4396D6F85ACE8D18205E546F33579E24969EFE3A2ED7B1CF6A518117D28/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     endgame = Content(
         creator_id=2,
@@ -97,7 +90,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/815EFF00A11FFB3EFC0A820BADE3A114F5F665D9AB38B9C74E7A6A03C55B1AA5/scale?width=1344&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/378C6FE4ECCA2BF454E2CF651D135010CBAEE1EA13A67AE96A4D189569B84030/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/DA3D5423E6866707A9AA7AED78BFDF6CCEC38A7AF35C154CA865A5106B492A75/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
 
     # PIXAR
@@ -111,7 +103,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/DB2ED0B116CA5BB242F9B258AA2D620D0AE6B0A8A5834F48F316917DC9622EFE/compose?width=2880&aspectRatio=3.91&format=jpeg&label=disneyplusoriginal_391",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0C2D94D36B55CEB8E3F77F2A94D208216330D18933F3F1AB8D5DE7C912E67A9D/badging?width=1200&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/298B91853FDBB4FAECA6BE4783C20E2DF891AE03C68DBD662F8CE615F7D2CBDC/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     ice_age = Content(
         creator_id=3,
@@ -123,7 +114,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1FFE9FE73EC4B8F8A3FB8C2B4A7DE2E14A257FD354A95C91CD641B0F5C0FE46F/compose?width=2880&aspectRatio=3.91&format=jpeg&label=disneyplusoriginal_391",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/351F9B0CB660473D494397B540DB01FE2A3180F61C804A4326429C6F74A82628/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1048B6A179EB5ECDC4983E8FD9908A8EBC65B8C3C71D61C667965DB500CAE983/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     lifted = Content(
         creator_id=3,
@@ -134,7 +124,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6DA55CCC46BC531A8E3EF2EE96F45EA9F30F6BD81F8011B5AAB0F2152FFF27A6/scale?width=1344&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D24C45584018B76F04CB88095F5E8DE258A6DC63A2104528F6794A715FA9CEC8/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/01A3391C861877FA1936AEB3DC711D83E4CD7966F584562A364B86FB44FC39ED/scale?width=1920&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     ciao_alberto = Content(
         creator_id=3,
@@ -145,7 +134,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/00DC99BDD7ACCA1FE108C5C48D6827BB8F1BDBA723A04A79F11568852569E70E/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/3E62F0985D9570221A0B6241741A03E4F1B41780E92A153D413CE8C8F12A56F5/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C434375E73C9C9E4AFAA4F1365A28A46BDC41364DDC2FF8D1AFCDFB48743711C/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
 
     # STAR WARS
@@ -158,7 +146,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4880C592DAEEA52EA12FA04105D0928F2EC858285771C1625E4B819B117F3ABE/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2688CDEDF4AF9EA8E1ED15471E3136F519B8673C0AD196F6FCC27C813FD3F056/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5573AA7AC5D145645A2A8FE6E63339FD39D752E95D5C88031CD2F93ED196BF1C/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     mandalorian = Content(
         creator_id=4,
@@ -169,7 +156,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/CE8A949CFE56A92A583718B6BEB2A7B7BA15E9A9301D75A7FEDBD4E35B8109AC/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5883B0B519D0B06CB7C5BD61D7D34C1C5C19ED2F8C069443EC95B23C1291F90F/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BC6B047B406507623B95A9CC34EF4DA38C42B563AF8362217202F5F09335DD40/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     new_hope = Content(
         creator_id=4,
@@ -180,7 +166,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E0D53C311E041AEBB9D1B6994B45A5B1FEAC8BA99E45990C9FEDE9E6B85D2B1A/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/206EA9D4D93692FA3844225A2A4EC463AAEB69D6A10BACF4F5BAE8FC22F8022A/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6DC7F4CDBDEF6BBDF2424268D7CD02AC7F35D05B3C167D3F2A963834DBBA150E/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     return_of_the_jedi = Content(
         creator_id=4,
@@ -191,7 +176,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/50947450CAB9FDDE16B076EA0394E57EE3E7F18DDE2E0A6DAF6E2FC675AD2D6D/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BA39ECA06BA0331C3266A171FE7C074A7BC18925AB53784F3ADF0DBA60555CAA/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6CD7D8A01C84B073FE44AF3F39F39CC740EC3E4B66F2DD130C66F72C858AD2CD/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
 
     # NATGEO
@@ -205,7 +189,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8B7DFAC90F3EE8A7DF9A3CD2C662967BCF3132E676259AA8D266685D8FBD3B36/compose?width=2880&aspectRatio=3.91&format=jpeg&label=391_scrim",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0169C689066AD6B1AE54E0EAAAD6E346A1ECE2B8A80CE24DC201AA09AA9A9755/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/162997F683944E7E53A655BFB51A40E634A557F0497CD04A20C4B6FEC29B9587/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     earth_month = Content(
         creator_id=5,
@@ -217,7 +200,6 @@ def seed_contents():
         banner="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/17CE74B547AC4358F582FF0620C360BCC13A3C7A4BF5BF92FC353ECE38A737A8/scale?width=2880&aspectRatio=3.91&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B5D24A24A8CB0F5C12CA7DC7B733FAF3494A18116DC37D7192814A9DF7C91685/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C3A661398FAB92A3F558651556AEAE1B593B4BF67C7B4EAA7F0A9A1898A7CD15/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     below_zero = Content(
         creator_id=5,
@@ -228,7 +210,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/24C387C76F6D1318FF461E0E09981E2E317B04118A647E655ACB866867A4208F/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/3543D3C90D050CC6BDEA5FCA631EC59B1E781DFC517CA3FD147D162A5B9E6DA9/scale?width=800&aspectRatio=1.78&format=jpeg",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1758EA692EACB27D7D74FF335606F28C34F9B1E3A30EF0D2D2B345DDE45F9506/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
     whales = Content(
         creator_id=5,
@@ -239,7 +220,6 @@ def seed_contents():
         logo="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D20E27B936D5D521C2EF17F627B0B2F040035738A33361102CF8DE567B0EAA0B/scale?width=1920&aspectRatio=1.78&format=png",
         thumbnail="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8A74652FB28103AA6A3306200D54AB7D5DE234DD7504FF32F91FF707658FE229/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/10A9C52E54C45D0E3860C9F3BDB6B64E48BE92EC2543A55A06F864CA438ED72B/scale?width=2880&aspectRatio=1.78&format=jpeg",
-        categories=""
     )
 
     db.session.add(olivia)
@@ -265,8 +245,9 @@ def seed_contents():
 
     db.session.commit()
 
+
 def undo_contents():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE contents RESTART IDENTITY CASCADE;')
     db.session.commit()
 
 # new = Content(
@@ -279,7 +260,7 @@ def undo_contents():
 #         # banner="",
 #         thumbnail="",
 #         background_picture="",
-#         categories=""
+#      
 #     )
 
 # DISNEY BACKGROUND VIDEO

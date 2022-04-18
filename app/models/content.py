@@ -15,10 +15,10 @@ class Content(db.Model):
     banner = db.Column(db.String)
     thumbnail = db.Column(db.String)
     background_picture = db.Column(db.String)
-    categories = db.Column(db.String, nullable=False)
 
     creator = db.relationship("User", back_populates="contents")
     favorite = db.relationship("Favorite", back_populates="content", cascade="all, delete")
+    category_detail = db.relationship("Category_Detail", back_populates="content", cascade="all, delete")
 
     def to_dict(self):
         return {
@@ -34,6 +34,5 @@ class Content(db.Model):
             'logo': self.logo,
             'banner': self.banner,
             'thumbnail': self.thumbnail,
-            'background_picture': self.background_picture,
-            'categories': self.categories
+            'background_picture': self.background_picture
         }

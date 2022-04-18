@@ -42,7 +42,7 @@ function ContentGallery() {
     return (
         <div id='content-gallery'>
             <NavBar />
-            <Carousel contents={contents} />
+            <Carousel contents={contents.Banner} />
             <div id='creators-container'>
                 {
                     creators.map(creator => (
@@ -55,6 +55,22 @@ function ContentGallery() {
                     ))
                 }
             </div>
+            {
+                Object.entries(contents).map(([category, contentsInCategory], idx) => (category !== 'Banner' && contentsInCategory.length) ? (
+                    <div id={idx} className='category-container'>
+                        <p style={{ fontSize: 20, marginBottom: 10 }}>{category}</p>
+                        <div className='contents-in-category-container'>
+                            {
+                                contentsInCategory.map(content => (
+                                    <div className='content-in-category-container' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
+
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                ) : null)
+            }
         </div>
     );
 }
