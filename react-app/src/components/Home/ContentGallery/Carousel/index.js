@@ -1,4 +1,4 @@
-import './ImageSlider.css';
+import './Carousel.css';
 
 import { useState } from 'react';
 
