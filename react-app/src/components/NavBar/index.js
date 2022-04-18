@@ -6,12 +6,12 @@ import ProfileButton from './ProfileButton';
 
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ backgroundColor }) => {
   const user = useSelector(state => state.session.user);
   const profile = useSelector(state => state.session.profile);
 
   return (
-    <nav>
+    <nav style={{ backgroundColor }}>
         <NavLink to='/'>
           <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
         </NavLink>

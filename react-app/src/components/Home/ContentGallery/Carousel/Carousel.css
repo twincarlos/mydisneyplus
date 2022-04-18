@@ -39,7 +39,7 @@ img.logo {
 div#carousel-dots {
     position: absolute;
     right: 160px;
-    top: 52vh;
+    margin-bottom: -450px;
     width: 250px;
     display: flex;
     justify-content: space-between;

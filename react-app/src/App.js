@@ -9,6 +9,7 @@ import Home from './components/Home';
 import SelectProfile from './components/ProfilePage/SelectProfile';
 import EditProfile from './components/ProfilePage/EditProfile';
 import CreateProfile from './components/ProfilePage/CreateProfile';
+import ContentPage from './components/ContentPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,10 @@ function App() {
           <CreateProfile />
         </ProtectedRoute>
         <ProtectedRoute path='/edit-profile' exact={true} >
-        { user ? <EditProfile /> : <Redirect to='/login' /> }
+          { user ? <EditProfile /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/content/:contentId' exact={true}>
+          { user ? <ContentPage /> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />

@@ -2,6 +2,7 @@ import './ContentGallery.css';
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { getAllContents } from '../../../store/content';
 import NavBar from '../../NavBar';
@@ -24,6 +25,7 @@ function ContentGallery() {
     const contents = useSelector(state => state.content.contents);
     const [loaded, setLoaded] = useState(false);
     const [visible, setVisible] = useState(null);
+    const history = useHistory();
 
     const creators = [
         { id: 1, logo: disneyLogo, video: disneyVideo },
@@ -41,7 +43,7 @@ function ContentGallery() {
 
     return (
         <div id='content-gallery'>
-            <NavBar />
+            <NavBar backgroundColor={'#090B13'}/>
             <Carousel contents={contents.Banner} />
             <div id='creators-container'>
                 {
@@ -62,7 +64,7 @@ function ContentGallery() {
                         <div className='contents-in-category-container'>
                             {
                                 contentsInCategory.map(content => (
-                                    <div className='content-in-category-container' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
+                                    <div onClick={() => history.push(`/content/${content.id}`)} className='content-in-category-container' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
 
                                     </div>
                                 ))

@@ -21,3 +21,8 @@ def all_contents():
         originals = Content.query.filter(Content.creator_id == 1)
         dict.update({ 'Originals': [content.to_dict() for content in originals] })
         return dict
+
+@content_routes.route('/<int:content_id>', methods=['GET', 'PUT', 'DELETE'])
+def one_content(content_id):
+    if request.method == 'GET':
+        return Content.query.get(content_id).to_dict()

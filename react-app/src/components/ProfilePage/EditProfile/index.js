@@ -40,7 +40,7 @@ function EditProfile () {
                             <div onClick={() => {
                                 setProfileEdit({ profileId: profile.id, name: profile.name, avatar: profile.avatar });
                                 setShowModal(true);
-                            }} className='user-profile' key={profile.id}>
+                            }} className='edit-user-profile' key={profile.id}>
                                 <img src={profile.avatar} alt=''></img>
                                 <p>{profile.name}</p>
                                 <button><i className="fas fa-pencil-alt"></i></button>
@@ -48,7 +48,7 @@ function EditProfile () {
                         ))
                     }
                     {
-                        user.profiles.length < 5 && 
+                        user.profiles.length < 5 &&
                         <div className='user-profile'>
                             <i onClick={() => {
                                 setProfileEdit(null);

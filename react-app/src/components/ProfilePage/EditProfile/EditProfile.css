@@ -65,13 +65,13 @@ div#profile-list {
     width: 100%;
 }
 
-div.user-profile {
+div.edit-user-profile {
     text-align: center;
     font-size: 30px;
     margin: 0 20px;
 }
 
-div.user-profile > img {
+div.edit-user-profile > img {
     width: 150px;
     margin-bottom: -10px;
     cursor: pointer;
@@ -80,19 +80,19 @@ div.user-profile > img {
     transition: .5s;
 }
 
-div.user-profile > button {
+div.edit-user-profile > button {
     background-color: #F9F9F9;
     border: none;
     width: 45px;
     height: 45px;
     border-radius: 50%;
     position: relative;
-    bottom: 145px;
+    bottom: 90px;
     left: 50px;
     cursor: pointer;
 }
 
-div.user-profile > i {
+div.edit-user-profile > i {
     background-color: #F9F9F91A;
     font-size: 48px;
     width: 150px;
@@ -106,7 +106,7 @@ div.user-profile > i {
     cursor: pointer;
 }
 
-div.user-profile > i:hover, div.user-profile > img:hover {
+div.edit-user-profile > i:hover, div.edit-user-profile > img:hover {
     background-color: #f9f9f95b;
     border: 5px solid #F9F9F9;
     transform: scale(1.05);
