@@ -56,3 +56,9 @@ button#fav:hover {
     background-color: #F9F9F9;
     color: black;
 }
+
+div#controls {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
