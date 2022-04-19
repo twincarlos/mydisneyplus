@@ -59,7 +59,7 @@ function ContentGallery() {
             </div>
             {
                 Object.entries(contents).map(([category, contentsInCategory], idx) => (category !== 'Banner' && contentsInCategory.length) ? (
-                    <div id={idx} className='category-container'>
+                    <div key={idx} className='category-container'>
                         <p style={{ fontSize: 20, marginBottom: 10 }}>{category}</p>
                         <div className='contents-in-category-container'>
                             {

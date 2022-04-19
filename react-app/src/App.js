@@ -10,6 +10,7 @@ import SelectProfile from './components/ProfilePage/SelectProfile';
 import EditProfile from './components/ProfilePage/EditProfile';
 import CreateProfile from './components/ProfilePage/CreateProfile';
 import ContentPage from './components/ContentPage';
+import CreateContent from './components/ContentPage/CreateContent';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -43,6 +44,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/content/:contentId' exact={true}>
           { user ? <ContentPage /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/create-content' exact={true}>
+          { user ? <CreateContent /> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />
