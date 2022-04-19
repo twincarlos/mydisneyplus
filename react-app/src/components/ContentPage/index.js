@@ -7,12 +7,14 @@ import ReactPlayer from 'react-player';
 
 import NavBar from '../NavBar';
 import { getOneContent } from '../../store/content';
+import { favoriteOneContent, unfavoriteOneContent } from '../../store/session';
 
 function ContentPage () {
     const dispatch = useDispatch();
     const [loaded, setLoaded] = useState(false);
     const contentId = useParams().contentId;
     const content = useSelector(state => state.content.content);
+    const profile = useSelector(state => state.session.profile);
 
     const [playing, setPlaying] = useState(false);
     const [width, setWidth] = useState(0);
@@ -60,7 +62,15 @@ function ContentPage () {
                             setHeight(100);
                             setPlaying(true);
                         }}><i className="fas fa-play"></i> Play</button>
-                        <button id='fav'><i className="fas fa-plus"></i></button>
+                        {
+                            profile.favorites.find(favorite => favorite.content.id === content.id) ?
+                            <button className='fav' onClick={() => {
+                                dispatch(unfavoriteOneContent(profile.id, content.id));
+                            }}><i className="fas fa-check"></i></button> :
+                            <button className='fav' onClick={() => {
+                                dispatch(favoriteOneContent(profile.id, content.id));
+                            }}><i className="fas fa-plus"></i></button>
+                        }
                     </span>
                     <p>{content.description}</p>
                 </div>

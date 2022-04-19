@@ -51,19 +51,7 @@ function CreateContent () {
             thumbnail: thumbnail ? thumbnail : "https://wallpaperaccess.com/full/250147.jpg",
             background_picture: backgroundPicture ? backgroundPicture : "https://static-assets.bamgrid.com/product/disneyplus/images/background.dc67869b698f6c927aae59c68d9dda46.png",
             categories
-        }))
-            .then(result => result.errors ? setErrors(result.errors) : history.push(`/content/${result.id}`));
-            // .then(result => console.log(result));
-        // console.log({
-        //     content_type: contentType,
-        //     title,
-        //     description,
-        //     media: mediaUrl,
-        //     logo: logo ? logo : "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FFA0BEBAC1406D88929497501C84019EBBA1B018D3F7C4C3C829F1810A24AD6E/scale?width=640&aspectRatio=1.78&format=png",
-        //     thumbnail: thumbnail ? thumbnail : "https://wallpaperaccess.com/full/250147.jpg",
-        //     background_picture: backgroundPicture ? backgroundPicture : "https://static-assets.bamgrid.com/product/disneyplus/images/background.dc67869b698f6c927aae59c68d9dda46.png",
-        //     categories
-        // });
+        })).then(result => result.errors ? setErrors(result.errors) : history.push(`/content/${result.id}`));
     }
 
     return (

@@ -40,7 +40,7 @@ button#play:hover {
     background-color: #9a9a9a;
 }
 
-button#fav {
+button.fav {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -52,7 +52,7 @@ button#fav {
     transition: .2s;
 }
 
-button#fav:hover {
+button.fav:hover {
     background-color: #F9F9F9;
     color: black;
 }

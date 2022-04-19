@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.models import User, Profile, db
+from app.models import User, Profile, Favorite, db
 from flask_login import current_user
 import json
 
@@ -66,18 +66,16 @@ def crud_profiles(profile_id):
         db.session.commit()
         return profile.to_dict()
 
-@profile_routes.route('/<int:profile_id>/favorite/<int:content_id>', methods=['POST'])
+@profile_routes.route('/<int:profile_id>/favorite/<int:content_id>', methods=['POST', 'DELETE'])
 def favorite_content(profile_id, content_id):
-    new_favorite = Favorite(profile_id = profile_id, content_id = content_id)
-    db.session.add(new_favorite)
-    db.session.commit()
-    content = Content.query.get(content_id)
-    return content.to_dict()
+    if request.method == 'POST':
+        new_favorite = Favorite(profile_id=profile_id, content_id=content_id)
+        db.session.add(new_favorite)
+        db.session.commit()
+        return new_favorite.to_dict()
 
-@profile_routes.route('/<int:profile_id>/unfavorite/<int:content_id>', methods=['DELETE'])
-def unfavorite_content(profile_id, content_id):
-    favorite = Favorite.query.filter(Favorite.profile_id == profile_id, Favorite.content_id == content_id).first()
-    db.session.delete(favorite)
-    db.session.commit()
-    content = Content.query.get(content_id)
-    return content.to_dict()
+    if request.method == 'DELETE':
+        favorite = Favorite.query.filter(Favorite.profile_id == profile_id, Favorite.content_id == content_id).first()
+        db.session.delete(favorite)
+        db.session.commit()
+        return str(content_id)

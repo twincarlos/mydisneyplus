@@ -5,6 +5,8 @@ const SET_PROFILE = 'session/SET_PROFILE';
 const ADD_PROFILE = 'session/ADD_PROFILE';
 const UPDATE_PROFILE = 'session/UPDATE_PROFILE';
 const DELETE_PROFILE = 'session/DELETE_PROFILE';
+const FAVORITE_CONTENT = 'session/FAVORITE_CONTENT';
+const UNFAVORITE_CONTENT = 'session/UNFAVORITE_CONTENT';
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -33,6 +35,16 @@ const updateProfile = profile => ({
 const deleteProfile = profile => ({
   type: DELETE_PROFILE,
   profile
+});
+
+const favoriteContent = favorite => ({
+  type: FAVORITE_CONTENT,
+  favorite
+});
+
+const unfavoriteContent = oldContentId => ({
+  type: UNFAVORITE_CONTENT,
+  oldContentId
 });
 
 const initialState = { user: null, profile: null };
@@ -162,6 +174,20 @@ export const deleteOneProfile = profileId => async dispatch => {
   return profile;
 }
 
+export const favoriteOneContent = (profileId, contentId) => async dispatch => {
+  const response = await fetch(`/api/profiles/${profileId}/favorite/${contentId}`, {method: 'POST'});
+  const favorite = await response.json();
+  dispatch(favoriteContent(favorite));
+  return favorite;
+}
+
+export const unfavoriteOneContent = (profileId, contentId) => async dispatch => {
+  const response = await fetch(`/api/profiles/${profileId}/favorite/${contentId}`, {method: 'DELETE'});
+  const oldContentId = await response.json();
+  dispatch(unfavoriteContent(oldContentId));
+  return oldContentId;
+}
+
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:
@@ -187,6 +213,22 @@ export default function reducer(state = initialState, action) {
       if (state.user.current_profile_id === action.profile.id) state.user.current_profile_id = null;
       state.user.profiles = state.user.profiles.filter(profile => profile.id !== action.profile.id);
       return state;
+    case FAVORITE_CONTENT:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          favorites: [...state.profile.favorites, action.favorite]
+        }
+      }
+    case UNFAVORITE_CONTENT:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          favorites: state.profile.favorites.filter(favorite => favorite.content.id !== action.oldContentId)
+        }
+      }
     default:
       return state;
   }
