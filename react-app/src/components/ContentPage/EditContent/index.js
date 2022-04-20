@@ -42,6 +42,7 @@ function EditContent({ user }) {
 
     if (!loaded) return null;
     if (!user.profiles.length) return <Redirect to='/create-profile' />;
+    if (user.id !== content.creator.id) return <Redirect to='/' />;
 
     return (
         <div id='edit-content'>
