@@ -21,7 +21,7 @@ function EditProfile ({ user }) {
     return (
         <div id='edit-profile'>
             <nav>
-                <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
+                <img onClick={() => history.push('/')} style={{ width: 100, marginLeft: 40, cursor: 'pointer' }} src={disneyPlusLogo} alt=''></img>
                 <button onClick={() => {
                     setProfileEdit(null);
                     setError('');

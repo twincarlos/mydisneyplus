@@ -44,6 +44,7 @@ def all_contents():
 
     if request.method == 'POST':
         errors = []
+        content = Content.query.filter(Content.title == request.form["title"]).first()
 
         logo_url = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FFA0BEBAC1406D88929497501C84019EBBA1B018D3F7C4C3C829F1810A24AD6E/scale?width=640&aspectRatio=1.78&format=png"
         thumbnail_url = "https://wallpaperaccess.com/full/250147.jpg"
@@ -56,6 +57,8 @@ def all_contents():
         if "background_picture" in request.files:
             background_picture = request.files["background_picture"]
 
+        if content is not None:
+            errors.append("Content title already exists")
         if not len(request.form["content_type"]):
             errors.append("Specify which type of content this is")
         if not len(request.form["title"]):
@@ -123,6 +126,7 @@ def one_content(content_id):
     if request.method == 'PUT':
         errors = []
         content = Content.query.get(content_id)
+        content_exists = Content.query.filter(Content.title == request.form["title"], Content.id != content_id).first()
 
         logo_url = content.logo
         thumbnail_url = content.thumbnail
@@ -135,6 +139,8 @@ def one_content(content_id):
         if "background_picture" in request.files:
             background_picture = request.files["background_picture"]
 
+        if content_exists is not None:
+            errors.append("Content title already exists")
         if not len(request.form["title"]):
             errors.append("Content title required")
         if not len(request.form["description"]):
@@ -178,3 +184,13 @@ def one_content(content_id):
         db.session.delete(content)
         db.session.commit()
         return content.to_dict()
+
+
+@content_routes.route('/search/<string:keyword>')
+def search(keyword):
+    if keyword == "*":
+        contents = Content.query.all()
+        return { 'contents': [content.to_dict() for content in contents] }
+    else:
+        contents = Content.query.filter(Content.title.ilike(f"%{keyword}%"))
+        return { 'contents': [content.to_dict() for content in contents] }

@@ -17,6 +17,8 @@ import Originals from './components/Originals';
 import Movies from './components/Movies';
 import Series from './components/Series';
 import Brand from './components/Brand';
+import Search from './components/Search';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -72,8 +74,14 @@ function App() {
         <ProtectedRoute path='/brand/:brandName' exact={true}>
           { user ? <Brand user={user} /> : <Redirect to='/login' /> }
         </ProtectedRoute>
+        <ProtectedRoute path='/search' exact={true}>
+          { user ? <Search user={user} /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />
+        </Route>
+        <Route>
+          <NotFound />
         </Route>
       </Switch>
     </BrowserRouter>

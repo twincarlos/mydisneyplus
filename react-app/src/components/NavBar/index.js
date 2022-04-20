@@ -19,7 +19,7 @@ const NavBar = ({ background }) => {
           <i className="fas fa-home"></i>
           <p>HOME</p>
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/search'>
           <i className="fas fa-search"></i>
           <p>SEARCH</p>
         </NavLink>

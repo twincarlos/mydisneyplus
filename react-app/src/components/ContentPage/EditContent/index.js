@@ -46,7 +46,7 @@ function EditContent({ user }) {
     return (
         <div id='edit-content'>
             <nav>
-                <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
+                <img onClick={() => history.push('/')} style={{ width: 100, marginLeft: 40, cursor: 'pointer' }} src={disneyPlusLogo} alt=''></img>
                 <button id='cancel' onClick={() => history.push(`/content/${content.id}`)}>Cancel</button>
                 <h1>Step {step} / 2</h1>
             </nav>

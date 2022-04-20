@@ -17,7 +17,7 @@ function CreateProfile ({ user }) {
     return (
         <div id='create-profile'>
             <nav>
-                <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
+                <img onClick={() => history.push('/')} style={{ width: 100, marginLeft: 40, cursor: 'pointer' }} src={disneyPlusLogo} alt=''></img>
                 <span>
                     <button onClick={async () => await dispatch(addOneProfile({ name, avatar })).then(result => result.error ? setError(result.error) : history.push('/profiles'))} style={{ backgroundColor: '#0072D2' }}>SAVE</button>
                     { user.profiles.length ? <button onClick={() => {

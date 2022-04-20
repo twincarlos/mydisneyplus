@@ -2,6 +2,7 @@ const GET_CONTENTS = 'content/GET_CONTENTS';
 const GET_CONTENT = 'content/GET_CONTENT';
 const POST_CONTENT = 'content/POST_CONTENT';
 const UPDATE_CONTENT = 'content/UPDATE_CONTENT';
+const SEARCH_CONTENT = 'content/SEARCH_CONTENT';
 
 const getContents = contents => ({
     type: GET_CONTENTS,
@@ -21,6 +22,11 @@ const postContent = content => ({
 const updateContent = content => ({
     type: UPDATE_CONTENT,
     content
+});
+
+const searchContent = contents => ({
+    type: SEARCH_CONTENT,
+    contents
 });
 
 const initialState = { contents: null, content: null };
@@ -56,13 +62,8 @@ export const postOneContent = data => async dispatch => {
     });
 
     const content =  await response.json();
-
-    if (content.errors) {
-        return content.errors;
-    } else {
-        dispatch(postContent(content));
-        return content;
-    }
+    if (!content.errors) dispatch(postContent(content));
+    return content;
 }
 
 export const updateOneContent = data => async dispatch => {
@@ -80,12 +81,15 @@ export const updateOneContent = data => async dispatch => {
 
     const content =  await response.json();
 
-    if (content.errors) {
-        return content.errors;
-    } else {
-        dispatch(updateContent(content));
-        return content;
-    }
+    if (!content.errors) dispatch(updateContent(content));
+    return content;
+}
+
+export const searchAllContents = keyword => async dispatch => {
+    const response = await fetch(`/api/contents/search/${keyword.length ? keyword : '*'}`);
+    const contents = await response.json();
+    dispatch(searchContent(contents.contents));
+    return contents;
 }
 
 export default function reducer(state = initialState, action) {
@@ -101,6 +105,9 @@ export default function reducer(state = initialState, action) {
             return state;
         case UPDATE_CONTENT:
             state.content = action.content;
+            return state;
+        case SEARCH_CONTENT:
+            state.contents = action.contents;
             return state;
         default:
             return state;

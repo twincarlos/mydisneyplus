@@ -46,15 +46,18 @@ function ContentPage () {
             />
             {
                 width ? (
-                <div id='controls'>
-                    { playing && <button onClick={() => setPlaying(false)}>Pause</button> }
-                    { !playing && <button onClick={() => setPlaying(true)}>Play</button> }
-                    <input onChange={e => setVolume(e.target.value)} type='range' min={0} max={1} step={0.01} value={volume}></input>
-                    <button onClick={() => {
+                <div id='controls' style={{ backgroundColor: playing ? 'transparent' : 'black' }}>
+                    { playing && <button className='pause-play' onClick={() => setPlaying(false)}><i className="fas fa-pause"></i></button> }
+                    { !playing && <button className='pause-play' onClick={() => setPlaying(true)}><i className="fas fa-play"></i></button> }
+                    <span>
+                        <i className="fas fa-volume-down"></i>
+                        <input onChange={e => setVolume(e.target.value)} type='range' min={0} max={1} step={0.01} value={volume}></input>
+                    </span>
+                    <button id='fullscreen' onClick={() => {
                         setPlaying(false);
                         setWidth(0);
                         setHeight(0);
-                    }}>Fullscreen</button>
+                    }}><i className="fas fa-expand"></i></button>
                 </div>
             ) : null}
             <div id='content-page'>

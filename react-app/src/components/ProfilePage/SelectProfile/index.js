@@ -16,7 +16,7 @@ function SelectProfile () {
     return (
         <div id='select-profile'>
             <nav>
-                <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
+                <img onClick={() => history.push('/')} style={{ width: 100, marginLeft: 40, cursor: 'pointer' }} src={disneyPlusLogo} alt=''></img>
                 <button onClick={() => history.push('/edit-profile')}>EDIT PROFILES</button>
             </nav>
             <div id='whos-watching'>

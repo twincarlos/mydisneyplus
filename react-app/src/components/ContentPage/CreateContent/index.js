@@ -62,7 +62,7 @@ function CreateContent ({ user }) {
     return (
         <div id='create-content'>
             <nav>
-                <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
+                <img onClick={() => history.push('/')} style={{ width: 100, marginLeft: 40, cursor: 'pointer' }} src={disneyPlusLogo} alt=''></img>
                 <button id='cancel' onClick={() => history.push(`/`)}>Cancel</button>
                 <h1>Step {step} / 4</h1>
             </nav>
