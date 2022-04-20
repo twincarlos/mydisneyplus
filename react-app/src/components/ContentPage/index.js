@@ -2,7 +2,7 @@ import './ContentPage.css';
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect, useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 import NavBar from '../NavBar';
@@ -11,10 +11,12 @@ import { favoriteOneContent, unfavoriteOneContent } from '../../store/session';
 
 function ContentPage () {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [loaded, setLoaded] = useState(false);
     const contentId = useParams().contentId;
     const content = useSelector(state => state.content.content);
     const profile = useSelector(state => state.session.profile);
+    const user = useSelector(state => state.session.user);
 
     const [playing, setPlaying] = useState(false);
     const [width, setWidth] = useState(0);
@@ -26,6 +28,8 @@ function ContentPage () {
     }, [dispatch, contentId]);
 
     if (!loaded) return null;
+
+    if (!user.profiles.length) return <Redirect to='/create-profile' />;
 
     return (
         <div id='content-background' style={{ backgroundImage: `url('${content.background_picture}')` }}>
@@ -70,6 +74,9 @@ function ContentPage () {
                             <button className='fav' onClick={() => {
                                 dispatch(favoriteOneContent(profile.id, content.id));
                             }}><i className="fas fa-plus"></i></button>
+                        }
+                        {
+                            content.creator.id === user.id ? <button onClick={() => history.push(`/edit-content/${content.id}`)} className='fav'><i className="fas fa-pen"></i></button> : null
                         }
                     </span>
                     <p>{content.description}</p>

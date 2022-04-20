@@ -32,10 +32,10 @@ function SelectProfile () {
                     }
                     {
                         user.profiles.length < 5 &&
-                        <div className='user-profile'>
+                        (<div className='user-profile'>
                             <i onClick={() => history.push('create-profile')} className="fas fa-plus"></i>
                             <p>Add Profile</p>
-                        </div>
+                        </div>)
                     }
                 </div>
             </div>

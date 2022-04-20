@@ -3,17 +3,16 @@ import avatars from '../avatars';
 import disneyPlusLogo from '../../../assets/disney-plus-logo.png';
 
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addOneProfile } from '../../../store/session';
 
-function CreateProfile () {
+function CreateProfile ({ user }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
     const [error, setError] = useState('');
-    const user = useSelector(state => state.session.user);
 
     return (
         <div id='create-profile'>

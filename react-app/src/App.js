@@ -11,6 +11,7 @@ import EditProfile from './components/ProfilePage/EditProfile';
 import CreateProfile from './components/ProfilePage/CreateProfile';
 import ContentPage from './components/ContentPage';
 import CreateContent from './components/ContentPage/CreateContent';
+import EditContent from './components/ContentPage/EditContent';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,16 +38,19 @@ function App() {
           <SelectProfile />
         </ProtectedRoute>
         <ProtectedRoute path='/create-profile' exact={true} >
-          <CreateProfile />
+          { user ? <CreateProfile user={user}/> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <ProtectedRoute path='/edit-profile' exact={true} >
-          { user ? <EditProfile /> : <Redirect to='/login' /> }
+          { user ? <EditProfile user={user}/> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <ProtectedRoute path='/content/:contentId' exact={true}>
-          { user ? <ContentPage /> : <Redirect to='/login' /> }
+          { user ? <ContentPage user={user}/> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <ProtectedRoute path='/create-content' exact={true}>
-          { user ? <CreateContent /> : <Redirect to='/login' /> }
+          { user ? <CreateContent user={user}/> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/edit-content/:contentId' exact={true}>
+          { user ? <EditContent user={user}/> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />

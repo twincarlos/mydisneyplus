@@ -2,19 +2,18 @@ import './EditProfile.css';
 
 import { Modal } from "../../../context/Modal";
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory, Redirect } from 'react-router-dom';
 import avatars from '../avatars';
 import disneyPlusLogo from '../../../assets/disney-plus-logo.png';
 
 import { updateOneProfile, deleteOneProfile } from '../../../store/session';
 
-function EditProfile () {
+function EditProfile ({ user }) {
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
     const [profileEdit, setProfileEdit] = useState(null);
     const [error, setError] = useState('');
-    const user = useSelector(state => state.session.user);
     const history = useHistory();
 
     if (!user.profiles.length) return <Redirect to='/create-profile' />;

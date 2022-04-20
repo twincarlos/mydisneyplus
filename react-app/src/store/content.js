@@ -1,6 +1,7 @@
 const GET_CONTENTS = 'content/GET_CONTENTS';
 const GET_CONTENT = 'content/GET_CONTENT';
 const POST_CONTENT = 'content/POST_CONTENT';
+const UPDATE_CONTENT = 'content/UPDATE_CONTENT';
 
 const getContents = contents => ({
     type: GET_CONTENTS,
@@ -16,6 +17,11 @@ const postContent = content => ({
     type: POST_CONTENT,
     content
 })
+
+const updateContent = content => ({
+    type: UPDATE_CONTENT,
+    content
+});
 
 const initialState = { contents: null, content: null };
 
@@ -59,6 +65,29 @@ export const postOneContent = data => async dispatch => {
     }
 }
 
+export const updateOneContent = data => async dispatch => {
+    const formData = new FormData();
+    formData.append('title', data.title);
+    formData.append('description', data.description);
+    formData.append('logo', data.logo);
+    formData.append('thumbnail', data.thumbnail);
+    formData.append('background_picture', data.background_picture);
+
+    const response = await fetch(`/api/contents/${data.id}`, {
+        method: 'PUT',
+        body: formData
+    });
+
+    const content =  await response.json();
+
+    if (content.errors) {
+        return content.errors;
+    } else {
+        dispatch(updateContent(content));
+        return content;
+    }
+}
+
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_CONTENTS:
@@ -68,6 +97,9 @@ export default function reducer(state = initialState, action) {
             state.content = action.content;
             return state;
         case POST_CONTENT:
+            state.content = action.content;
+            return state;
+        case UPDATE_CONTENT:
             state.content = action.content;
             return state;
         default:

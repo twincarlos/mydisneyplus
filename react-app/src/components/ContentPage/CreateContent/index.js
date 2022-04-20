@@ -3,11 +3,11 @@ import disneyPlusLogo from '../../../assets/disney-plus-logo.png';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 
 import { postOneContent } from '../../../store/content';
 
-function CreateContent () {
+function CreateContent ({ user }) {
     const [step, setStep] = useState(1);
     const [contentType, setContentType] = useState('');
     const [title, setTitle] = useState('');
@@ -53,6 +53,8 @@ function CreateContent () {
             categories
         })).then(result => result.errors ? setErrors(result.errors) : history.push(`/content/${result.id}`));
     }
+
+    if (!user.profiles.length) return <Redirect to='/create-profile' />;
 
     return (
         <div id='create-content'>

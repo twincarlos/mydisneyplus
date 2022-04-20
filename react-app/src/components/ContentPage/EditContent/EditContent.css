@@ -1,0 +1,171 @@
+div#edit-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1d29;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div#edit-content > nav {
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#edit-content > nav > h1 {
+    margin-right: 50px;
+    color: #cacaca;
+}
+
+button#cancel {
+    background-color: #383944;
+    border: none;
+    color: #cacaca;
+    padding:  10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: .2s;
+}
+
+button#cancel:hover {
+    opacity: 1;
+}
+
+div#next-right {
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #63636351);
+    transition: all .5s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #cacaca07;
+}
+
+div#next-right:hover {
+    background: linear-gradient(to right, transparent, #636363ae);
+    color: #cacaca24;
+}
+
+div#next-left {
+    position: absolute;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to left, transparent, #63636351);
+    transition: all .5s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #cacaca07;
+}
+
+div#next-left:hover {
+    background: linear-gradient(to left, transparent, #636363ae);
+    color: #cacaca24;
+}
+
+div.edit-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* STEP 1 */
+div#edit-content-1 > input {
+    width: 800px;
+    height: 60px;
+    background-color: #F9F9F91A;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: #F9F9F9;
+    margin-bottom: 100px;
+}
+
+div#edit-content-1 > textarea {
+    width: 800px;
+    height: 60px;
+    background-color: #F9F9F91A;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: #F9F9F9;
+    margin-bottom: 100px;
+}
+
+/* STEP 2 */
+
+div#inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#inputs > label {
+    background-color: #F9F9F91A;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .5s;
+}
+
+div#inputs > label:hover {
+    background-color: #f9f9f955;
+}
+
+div#inputs > button {
+    background-color: #0072D2;
+    color: #F9F9F9;
+    border: none;
+    transition: .5s;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 100px;
+}
+
+div#content-assets {
+    width: 350px;
+    position: absolute;
+    right: 200px;
+    text-align: right;
+}
+
+div.content-asset {
+    margin-bottom: 30px;
+}
+
+div.content-asset > p {
+    font-size: 20px;
+}
+
+div.content-asset > img {
+    width: 100%;
+}

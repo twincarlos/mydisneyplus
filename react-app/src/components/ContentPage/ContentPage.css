@@ -50,6 +50,7 @@ button.fav {
     background-color: #0000004D;
     color: #F9F9F9;
     transition: .2s;
+    margin-right: 15px;
 }
 
 button.fav:hover {

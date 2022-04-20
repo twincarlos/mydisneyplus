@@ -100,3 +100,62 @@ def all_contents():
 def one_content(content_id):
     if request.method == 'GET':
         return Content.query.get(content_id).to_dict()
+
+    if request.method == 'PUT':
+        errors = []
+        content = Content.query.get(content_id)
+
+        logo_url = content.logo
+        thumbnail_url = content.thumbnail
+        background_picture_url = content.background_picture
+
+        if "logo" in request.files:
+            logo = request.files["logo"]
+        if "thumbnail" in request.files:
+            thumbnail = request.files["thumbnail"]
+        if "background_picture" in request.files:
+            background_picture = request.files["background_picture"]
+
+        if not len(request.form["title"]):
+            errors.append("Content title required")
+        if not len(request.form["description"]):
+            errors.append("Description required")
+        if "logo" in request.files and not allowed_file(request.files["logo"].filename):
+            errors.append("Please provide a valid logo")
+        if "thumbnail" in request.files and not allowed_file(request.files["thumbnail"].filename):
+            errors.append("Please provide a valid thumbnail")
+        if "background_picture" in request.files and not allowed_file(request.files["background_picture"].filename):
+            errors.append("Please provide a valid background picture")
+
+        if len(errors):
+            return { "errors": errors }
+
+        if "logo" in request.files:
+            logo.filename = get_unique_filename(logo.filename)
+            logo_upload = upload_file_to_s3(logo)
+            logo_url = logo_upload["url"]
+
+        if "thumbnail" in request.files:
+            thumbnail.filename = get_unique_filename(thumbnail.filename)
+            thumbnail_upload = upload_file_to_s3(thumbnail)
+            thumbnail_url = thumbnail_upload["url"]
+
+        if "background_picture" in request.files:
+            background_picture.filename = get_unique_filename(thumbnail.filename)
+            background_picture_upload = upload_file_to_s3(background_picture)
+            background_picture_url = background_picture_upload["url"]
+
+        content.title = request.form["title"]
+        content.description = request.form["description"]
+        content.logo = logo_url
+        content.thumbnail = thumbnail_url
+        content.background_picture = background_picture_url
+        db.session.commit()
+
+        return content.to_dict()
+
+    if request.method == 'DELETE':
+        content = Content.query.get(content_id)
+        db.session.delete(content)
+        db.session.commit()
+        return content.to_dict()
