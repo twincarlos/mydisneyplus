@@ -58,8 +58,9 @@ div.creator-container > video {
 
 div.category-container {
     margin-left: 110px;
-    height: 250px;
+    height: 280px;
     margin-bottom: 30px;
+    overflow-x: scroll;
 }
 
 div.contents-in-category-container {
