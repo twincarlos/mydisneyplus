@@ -39,6 +39,9 @@ function ProfileButton ({ user, profile }) {
                 <NavLink to='/edit-profile' exact={true} activeClassName='active'>
                     Edit Profiles
                 </NavLink>
+                <NavLink to='/create-content' exact={true} activeClassName='active'>
+                    Create Content
+                </NavLink>
                 <LogoutButton />
             </div>
         </div>

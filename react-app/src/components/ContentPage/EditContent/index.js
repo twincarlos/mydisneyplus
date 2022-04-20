@@ -97,8 +97,8 @@ function EditContent({ user }) {
                                 reader.readAsDataURL(e.target.files[0]);
                             }} accept='image/*' type="file" id="background-image" className="input-file" style={{ visibility: 'hidden' }} />
                             <label htmlFor="background-image">Change Background Image</label>
-                            <button onClick={handleSubmit}>Submit</button>
-                            <button onClick={async () => {
+                            <button className='submit' onClick={handleSubmit}>Submit</button>
+                            <button id='delete' onClick={async () => {
                                 await fetch(`/api/contents/${content.id}`, { method: 'DELETE' }).then(() => history.push('/'));
                             }}>Delete</button>
                         </div>

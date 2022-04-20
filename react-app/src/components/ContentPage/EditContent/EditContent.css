@@ -138,7 +138,7 @@ div#inputs > label:hover {
     background-color: #f9f9f955;
 }
 
-div#inputs > button {
+button.submit {
     background-color: #0072D2;
     color: #F9F9F9;
     border: none;
@@ -149,6 +149,23 @@ div#inputs > button {
     letter-spacing: 1px;
     cursor: pointer;
     margin-top: 100px;
+}
+
+button#delete {
+    background-color: #383944;
+    color: #F9F9F9;
+    border: 3px solid #F9F9F91A;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .2s;
+}
+
+button#delete:hover {
+    background-color: #F9F9F91A;
 }
 
 div#content-assets {

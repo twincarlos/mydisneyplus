@@ -1,14 +1,16 @@
 import './Carousel.css';
 
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Carousel ({ contents }) {
+    const history = useHistory();
     const [position, setPosition] = useState(1);
     const [right, setRight] = useState('-3');
 
     const whichPosition = () => {
-        position === 10 ? setPosition(1) : setPosition(position + 1);
-        right === '823.2' ? setRight('-3') : setRight(((Number(right) + 91.8).toFixed(1)).toString());
+        position === contents.length ? setPosition(1) : setPosition(position + 1);
+        right === ((((contents.length - 1) * 91.8).toFixed(1)) - 3).toString() ? setRight('-3') : setRight(((Number(right) + 91.8).toFixed(1)).toString());
     };
 
     return (
@@ -20,7 +22,7 @@ function Carousel ({ contents }) {
             <div id='carousel' style={{ right: `${right}vw` }} className={`position${position}`} onAnimationEnd={whichPosition}>
                 {
                     contents.map(content => (
-                        <div className='content-container' key={content.id}>
+                        <div onClick={() => history.push(`/content/${content.id}`)} className='content-container' key={content.id}>
                             <div className='banner-container' style={{ backgroundImage: `url('${content.banner}')` }}>
                                 <img className='logo' src={content.logo} alt=''></img>
                             </div>

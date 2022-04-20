@@ -17,6 +17,9 @@ function CreateContent ({ user }) {
     const [logo, setLogo] = useState(null);
     const [thumbnail, setThumbnail] = useState(null);
     const [backgroundPicture, setBackgroundPicture] = useState(null);
+    const [logoPreview, setLogoPreview] = useState(null);
+    const [thumbnailPreview, setThumbnailPreview] = useState(null);
+    const [backgroundPicturePreview, setBackgroundPicturePreview] = useState(null);
     const [errors, setErrors] = useState([]);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -60,6 +63,7 @@ function CreateContent ({ user }) {
         <div id='create-content'>
             <nav>
                 <img style={{ width: 100, marginLeft: 40 }} src={disneyPlusLogo} alt=''></img>
+                <button id='cancel' onClick={() => history.push(`/`)}>Cancel</button>
                 <h1>Step {step} / 4</h1>
             </nav>
             {
@@ -109,18 +113,51 @@ function CreateContent ({ user }) {
             {
                 step === 4 ? (
                     <div className='create-content' id='create-content-4'>
-                        <div className='errors'>
-                            {
-                                errors.map((error, idx) => <p key={idx}>{error}</p>)
-                            }
+                        <div id='inputs'>
+                            <div className='errors'>
+                                {
+                                    errors.map((error, idx) => <p key={idx}>{error}</p>)
+                                }
+                            </div>
+                            <h1>Optional</h1>
+                            <p></p>
+                            <input onChange={e => {
+                                setLogo(e.target.files[0]);
+                                const reader = new FileReader();
+                                reader.onloadend = () => setLogoPreview(reader.result);
+                                reader.readAsDataURL(e.target.files[0]);
+                            }} accept='image/*' type="file" id="logo" className="input-file" style={{ visibility: 'hidden' }}/>
+                            <label htmlFor="logo">Change logo</label>
+                            <input onChange={e => {
+                                setThumbnail(e.target.files[0]);
+                                const reader = new FileReader();
+                                reader.onloadend = () => setThumbnailPreview(reader.result);
+                                reader.readAsDataURL(e.target.files[0]);
+                            }} accept='image/*' type="file" id="thumbnail" className="input-file" style={{ visibility: 'hidden' }}/>
+                            <label htmlFor="thumbnail">Change thumbnail</label>
+                            <input onChange={e => {
+                                setBackgroundPicture(e.target.files[0]);
+                                const reader = new FileReader();
+                                reader.onloadend = () => setBackgroundPicturePreview(reader.result);
+                                reader.readAsDataURL(e.target.files[0]);
+                            }} accept='image/*' type="file" id="background-image" className="input-file" style={{ visibility: 'hidden' }}/>
+                            <label htmlFor="background-image">Change background image</label>
+                            <button className='submit' onClick={handleSubmit}>Submit</button>
                         </div>
-                        <input onChange={e => setLogo(e.target.files[0])} accept='image/*' type="file" id="logo" className="input-file" style={{ visibility: 'hidden' }}/>
-                        <label htmlFor="logo">Add a logo</label>
-                        <input onChange={e => setThumbnail(e.target.files[0])} accept='image/*' type="file" id="thumbnail" className="input-file" style={{ visibility: 'hidden' }}/>
-                        <label htmlFor="thumbnail">Add a thumbnail</label>
-                        <input onChange={e => setBackgroundPicture(e.target.files[0])} accept='image/*' type="file" id="background-image" className="input-file" style={{ visibility: 'hidden' }}/>
-                        <label htmlFor="background-image">Add a background image</label>
-                        <button onClick={handleSubmit}>Submit</button>
+                        <div id='content-assets'>
+                            <div className='content-asset'>
+                                <p>Logo</p>
+                                <img src={logoPreview ? logoPreview : "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FFA0BEBAC1406D88929497501C84019EBBA1B018D3F7C4C3C829F1810A24AD6E/scale?width=640&aspectRatio=1.78&format=png"} alt=''></img>
+                            </div>
+                            <div className='content-asset'>
+                                <p>Thumbnail</p>
+                                <img src={thumbnailPreview ? thumbnailPreview : "https://wallpaperaccess.com/full/250147.jpg"} alt=''></img>
+                            </div>
+                            <div className='content-asset'>
+                                <p>Background Picture</p>
+                                <img src={backgroundPicturePreview ? backgroundPicturePreview : "https://static-assets.bamgrid.com/product/disneyplus/images/background.dc67869b698f6c927aae59c68d9dda46.png"} alt=''></img>
+                            </div>
+                        </div>
                     </div>
                 ) : null
             }
