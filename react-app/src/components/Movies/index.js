@@ -24,12 +24,12 @@ function Movies ({ user }) {
 
     return (
         <div id='series'>
-            <NavBar backgroundColor={'#090B13'}/>
+            <NavBar background='#090B13'/>
             <div id='series-container'>
                 <h1>Movies</h1>
                 <div id='series-grid'>
                     {
-                        contents.Movies.map(content => (
+                        contents.sections.Movies.map(content => (
                             <div onClick={() => history.push(`/content/${content.id}`)} className='series-content' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
                             </div>
                         ))

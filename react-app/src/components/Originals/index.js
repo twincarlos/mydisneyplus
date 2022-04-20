@@ -24,12 +24,12 @@ function Originals ({ user }) {
 
     return (
         <div id='originals'>
-            <NavBar backgroundColor={'#090B13'}/>
+            <NavBar background='#090B13'/>
             <div id='originals-container'>
                 <h1>Originals</h1>
                 <div id='originals-grid'>
                     {
-                        contents.Originals.map(content => (
+                        contents.sections.Originals.map(content => (
                             <div onClick={() => history.push(`/content/${content.id}`)} className='originals-content' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
                             </div>
                         ))

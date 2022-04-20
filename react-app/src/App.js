@@ -16,6 +16,7 @@ import Watchlist from './components/Watchlist';
 import Originals from './components/Originals';
 import Movies from './components/Movies';
 import Series from './components/Series';
+import Brand from './components/Brand';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -67,6 +68,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/series' exact={true}>
           { user ? <Series user={user} /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/brand/:brandName' exact={true}>
+          { user ? <Brand user={user} /> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />

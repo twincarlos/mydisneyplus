@@ -24,12 +24,12 @@ function Series ({ user }) {
 
     return (
         <div id='series'>
-            <NavBar backgroundColor={'#090B13'}/>
+            <NavBar background='#090B13'/>
             <div id='series-container'>
                 <h1>Series</h1>
                 <div id='series-grid'>
                     {
-                        contents.Series.map(content => (
+                        contents.sections.Series.map(content => (
                             <div onClick={() => history.push(`/content/${content.id}`)} className='series-content' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
                             </div>
                         ))

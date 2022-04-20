@@ -34,7 +34,7 @@ function ContentPage () {
 
     return (
         <div id='content-background' style={{ backgroundImage: `url('${content.background_picture}')` }}>
-            { !width && <NavBar backgroundColor={'transparent'} /> }
+            { !width && <NavBar background='transparent' /> }
             <ReactPlayer
                 url={content.media}
                 width={width + "%"}

@@ -10,24 +10,37 @@ content_routes = Blueprint("contents", __name__)
 def all_contents():
     if request.method == 'GET':
         categories = Category.query.all()
-        dict = {}
+        categories_dict = {}
+        sections = {}
 
         for category in categories:
             category_details = Category_Detail.query.filter(Category_Detail.category_id == category.id)
-            dict.update({ category.name: [content.to_dict() for content in category_details] })
+            categories_dict.update({ category.name: [content.to_dict() for content in category_details] })
 
         contents_with_banner = Content.query.filter(Content.banner != None)
-        dict.update({ 'Banner': [content.to_dict() for content in contents_with_banner] })
+        sections.update({ 'Banner': [content.to_dict() for content in contents_with_banner] })
 
         originals = Content.query.filter(Content.creator_id == 1)
-        dict.update({ 'Originals': [content.to_dict() for content in originals] })
+        sections.update({ 'Originals': [content.to_dict() for content in originals] })
 
         movies = Content.query.filter(Content.content_type == 'Movie')
-        dict.update({ 'Movies': [content.to_dict() for content in movies] })
+        sections.update({ 'Movies': [content.to_dict() for content in movies] })
 
         series = Content.query.filter(Content.content_type == 'Series')
-        dict.update(({ 'Series': [content.to_dict() for content in series] }))
-        return dict
+        sections.update(({ 'Series': [content.to_dict() for content in series] }))
+
+        pixar = Content.query.filter(Content.creator_id == 2)
+        sections.update(({ 'Pixar': [content.to_dict() for content in pixar] }))
+
+        marvel = Content.query.filter(Content.creator_id == 3)
+        sections.update(({ 'Marvel': [content.to_dict() for content in marvel] }))
+
+        star_wars = Content.query.filter(Content.creator_id == 4)
+        sections.update(({ 'Star Wars': [content.to_dict() for content in star_wars] }))
+
+        natgeo = Content.query.filter(Content.creator_id == 5)
+        sections.update(({ 'NatGeo': [content.to_dict() for content in natgeo] }))
+        return { 'categories': categories_dict, 'sections': sections }
 
     if request.method == 'POST':
         errors = []

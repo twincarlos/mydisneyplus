@@ -13,7 +13,7 @@ function Watchlist ({ user }) {
 
     return (
         <div id='watchlist'>
-            <NavBar backgroundColor={'#090B13'}/>
+            <NavBar background='#090B13'/>
             <div id='watchlist-container'>
                 <h1>Watchlist</h1>
                 <h2 style={{ marginBottom: 20 }}>My Movies & Series</h2>

@@ -50,7 +50,7 @@ def seed_contents():
 
     # MARVEL
     moonkinght = Content(
-        creator_id=2,
+        creator_id=3,
         content_type="Series",
         title="Moon Knight",
         description="Steven Grant, a mild-mannered man who works a mundane job, begins to suspect that his life may not be his own when an alter living inside him begins to emerge.",
@@ -61,7 +61,7 @@ def seed_contents():
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7CBE13FF54314360482A2082861810F39B94CBFEA27E54054FF886490EEDE70C/scale?width=2880&aspectRatio=1.78&format=jpeg",
     )
     spidey = Content(
-        creator_id=2,
+        creator_id=3,
         content_type="Series",
         title="Spidey And His Amazing Friends",
         description="Spidey, Ghost-Spider, and Miles Morales team up to become The Spidey Team! With a little help from other Avenger friends, these superheroes will work together to save the day!",
@@ -72,7 +72,7 @@ def seed_contents():
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/39910FA1CB8733FEF073CCC847D886C2E8865B72D42086CF8FC2D4ED37D4AD88/scale?width=2880&aspectRatio=1.78&format=jpeg",
     )
     eternals = Content(
-        creator_id=2,
+        creator_id=3,
         content_type="Movie",
         title="The Eternals",
         description="Marvel Studios’ \"Eternals\" follows a group of ancient heroes from beyond the stars who had protected Earth since the dawn of man. When monstrous creatures called Deviants, long thought lost to history, mysteriously return, the Eternals are forced to reunite in order to defend humanity once again.",
@@ -82,7 +82,7 @@ def seed_contents():
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1CF2A4396D6F85ACE8D18205E546F33579E24969EFE3A2ED7B1CF6A518117D28/scale?width=2880&aspectRatio=1.78&format=jpeg",
     )
     endgame = Content(
-        creator_id=2,
+        creator_id=3,
         content_type="Movie",
         title="Avengers: Endgame",
         description="The epic conclusion to the Infinity Saga that became a critically acclaimed worldwide phenomenon, this dramatic showdown pits the Avengers against Thanos. After devastating events wiped out half the world’s population and fractured their ranks, the remaining heroes struggle to move forward. But they must come together to restore order and harmony in the universe and bring their loved ones back.",
@@ -94,7 +94,7 @@ def seed_contents():
 
     # PIXAR
     turning_red = Content(
-        creator_id=3,
+        creator_id=2,
         content_type="Movie",
         title="Turning Red",
         description="Disney and Pixar’s “Turning Red” introduces Mei Lee, a confident, dorky 13-year-old torn between staying her mother’s dutiful daughter and the chaos of adolescence. Her protective, if not slightly overbearing mother, Ming, is never far from her daughter—an unfortunate reality for the teenager. And as if changes to her interests, relationships and body weren’t enough, whenever she gets too excited, she “poofs” into a giant red panda!",
@@ -105,7 +105,7 @@ def seed_contents():
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/298B91853FDBB4FAECA6BE4783C20E2DF891AE03C68DBD662F8CE615F7D2CBDC/scale?width=2880&aspectRatio=1.78&format=jpeg",
     )
     ice_age = Content(
-        creator_id=3,
+        creator_id=2,
         content_type="Movie",
         title="Ice Age",
         description="Six all-new animated “Ice Age” adventures starring Scrat, the hapless saber-toothed squirrel, who experiences the ups and downs of fatherhood, as he and the adorable, mischievous Baby Scrat, alternately bond with each other and battle for ownership of the highly treasured Acorn.",
@@ -116,7 +116,7 @@ def seed_contents():
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1048B6A179EB5ECDC4983E8FD9908A8EBC65B8C3C71D61C667965DB500CAE983/scale?width=2880&aspectRatio=1.78&format=jpeg",
     )
     lifted = Content(
-        creator_id=3,
+        creator_id=2,
         content_type="Series",
         title="Lifted",
         description="A nervous teen alien at a spaceship’s controls must attempt to abduct a sleeping farmer under a stern instructor's watchful eye.",
@@ -126,7 +126,7 @@ def seed_contents():
         background_picture="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/01A3391C861877FA1936AEB3DC711D83E4CD7966F584562A364B86FB44FC39ED/scale?width=1920&aspectRatio=1.78&format=jpeg",
     )
     ciao_alberto = Content(
-        creator_id=3,
+        creator_id=2,
         content_type="Series",
         title="Ciao Alberto",
         description="With his best friend Luca away at school, Alberto is enjoying his new life in Portorosso working alongside Massimo—the imposing, tattooed, one-armed fisherman of few words—who’s quite possibly the coolest human in the entire world as far as Alberto is concerned. He wants more than anything to impress his mentor, but it’s easier said than done.",

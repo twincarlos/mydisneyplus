@@ -28,11 +28,11 @@ function ContentGallery() {
     const [visible, setVisible] = useState(null);
 
     const creators = [
-        { id: 1, logo: disneyLogo, video: disneyVideo },
-        { id: 2, logo: pixarLogo, video: pixarVideo },
-        { id: 3, logo: marvelLogo, video: marvelVideo },
-        { id: 4, logo: starwarsLogo, video: starwarsVideo },
-        { id: 5, logo: natgeoLogo, video: natgeoVideo }
+        { id: 1, logo: disneyLogo, video: disneyVideo, name: 'disney' },
+        { id: 2, logo: pixarLogo, video: pixarVideo, name: 'pixar' },
+        { id: 3, logo: marvelLogo, video: marvelVideo, name: 'marvel' },
+        { id: 4, logo: starwarsLogo, video: starwarsVideo, name: 'starwars' },
+        { id: 5, logo: natgeoLogo, video: natgeoVideo, name: 'natgeo' }
     ];
 
     useEffect(() => {
@@ -43,12 +43,12 @@ function ContentGallery() {
 
     return (
         <div id='content-gallery'>
-            <NavBar backgroundColor={'#090B13'}/>
-            <Carousel contents={contents.Banner} />
+            <NavBar background='#090B13'/>
+            <Carousel contents={contents.sections.Banner} />
             <div id='creators-container'>
                 {
                     creators.map(creator => (
-                        <div key={creator.id} className='creator-container' onMouseEnter={() => setVisible(creator.id)} onMouseLeave={() => setVisible(null)}>
+                        <div key={creator.id} className='creator-container' onClick={() => history.push(`/brand/${creator.name}`)} onMouseEnter={() => setVisible(creator.id)} onMouseLeave={() => setVisible(null)}>
                             <img src={creator.logo} alt=''></img>
                             <video autoPlay loop muted style={{ visibility: visible === creator.id ? 'visible' : 'hidden' }}>
                                 <source src={creator.video} type='video/mp4'></source>
@@ -58,7 +58,7 @@ function ContentGallery() {
                 }
             </div>
             {
-                Object.entries(contents).map(([category, contentsInCategory], idx) => (category !== 'Banner' && category !== 'Movies' && category !== 'Series' && contentsInCategory.length) ? (
+                Object.entries(contents.categories).map(([category, contentsInCategory], idx) => contentsInCategory.length ? (
                     <div key={idx} className='category-container'>
                         <p style={{ fontSize: 20, marginBottom: 10 }}>{category}</p>
                         <div className='contents-in-category-container'>
