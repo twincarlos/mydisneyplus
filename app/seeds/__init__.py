@@ -1,5 +1,6 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
+from .profiles import seed_profiles, undo_profiles
 from .contents import seed_contents, undo_contents
 from .categories import seed_categories, undo_categories
 from .category_details import seed_category_details, undo_category_details
@@ -13,6 +14,7 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
+    seed_profiles()
     seed_contents()
     seed_categories()
     seed_category_details()
@@ -25,5 +27,6 @@ def undo():
     undo_category_details()
     undo_categories()
     undo_contents()
+    undo_profiles()
     undo_users()
     # Add other undo functions here

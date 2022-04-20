@@ -18,6 +18,8 @@ const LoginForm = () => {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
+    } else {
+      return <Redirect to='/'/>
     }
   };
 
@@ -58,6 +60,10 @@ const LoginForm = () => {
             onChange={updatePassword}
           />
           <button type='submit'>Login</button>
+          <button style={{ marginTop: 10 }} onClick={() => {
+            setEmail('disney@aa.io');
+            setPassword('password');
+          }}>Login as Demo</button>
       </form>
       <span>
         <p style={{ marginRight: 10, color: '#cacaca' }}>New to MyDisney+?</p>
