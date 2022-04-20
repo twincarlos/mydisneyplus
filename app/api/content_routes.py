@@ -21,6 +21,12 @@ def all_contents():
 
         originals = Content.query.filter(Content.creator_id == 1)
         dict.update({ 'Originals': [content.to_dict() for content in originals] })
+
+        movies = Content.query.filter(Content.content_type == 'Movie')
+        dict.update({ 'Movies': [content.to_dict() for content in movies] })
+
+        series = Content.query.filter(Content.content_type == 'Series')
+        dict.update(({ 'Series': [content.to_dict() for content in series] }))
         return dict
 
     if request.method == 'POST':

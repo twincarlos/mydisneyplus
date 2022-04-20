@@ -79,7 +79,7 @@ function CreateContent ({ user }) {
                         <h1 style={{ marginBottom: 20 }}>What type of content is this?</h1>
                         <span>
                             <button onClick={() => setContentType('Movie')} className={contentType === 'Movie' ? 'content-type' : null}>Movie</button>
-                            <button onClick={() => setContentType('Show')} className={contentType === 'Show' ? 'content-type' : null}>Show</button>
+                            <button onClick={() => setContentType('Series')} className={contentType === 'Series' ? 'content-type' : null}>Series</button>
                         </span>
                     </div>
                 ) : null

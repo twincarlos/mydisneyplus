@@ -16,7 +16,7 @@ def seed_contents():
     )
     nate = Content(
         creator_id=1,
-        content_type="Show",
+        content_type="Series",
         title="Better Nate Than Ever",
         description="Thirteen-year-old Nate has big Broadway dreams. But when he isn't cast in the school play, he and his best friend Libby sneak off to the Big Apple, where he's unexpectedly reunited with his long-lost Aunt Heidi. Together they must prove that life’s greatest adventures are only as big as your dreams.",
         media="https://www.youtube.com/watch?v=xwdQPXTMUQc",
@@ -27,7 +27,7 @@ def seed_contents():
     )
     simpsons = Content(
         creator_id=1,
-        content_type="Show",
+        content_type="Series",
         title="The Simpsons",
         description="This animated comedy focuses on the eponymous family in the town of Springfield. The head of the Simpson family, Homer, is not a typical family man. A nuclear-plant employee, he does his best to lead his family but often finds that they are leading him. The family includes loving, blue-haired matriarch Marge, troublemaking son Bart, overachieving daughter Lisa and baby Maggie.",
         media="https://www.youtube.com/watch?v=_jgYEYERYFQ",
@@ -51,7 +51,7 @@ def seed_contents():
     # MARVEL
     moonkinght = Content(
         creator_id=2,
-        content_type="Show",
+        content_type="Series",
         title="Moon Knight",
         description="Steven Grant, a mild-mannered man who works a mundane job, begins to suspect that his life may not be his own when an alter living inside him begins to emerge.",
         media="https://www.youtube.com/watch?v=kPZDL8wFQL8",
@@ -62,7 +62,7 @@ def seed_contents():
     )
     spidey = Content(
         creator_id=2,
-        content_type="Show",
+        content_type="Series",
         title="Spidey And His Amazing Friends",
         description="Spidey, Ghost-Spider, and Miles Morales team up to become The Spidey Team! With a little help from other Avenger friends, these superheroes will work together to save the day!",
         media="https://www.youtube.com/watch?v=wktBC7XE28o",
@@ -117,7 +117,7 @@ def seed_contents():
     )
     lifted = Content(
         creator_id=3,
-        content_type="Show",
+        content_type="Series",
         title="Lifted",
         description="A nervous teen alien at a spaceship’s controls must attempt to abduct a sleeping farmer under a stern instructor's watchful eye.",
         media="https://www.youtube.com/watch?v=PjNNcfPZaKE",
@@ -127,7 +127,7 @@ def seed_contents():
     )
     ciao_alberto = Content(
         creator_id=3,
-        content_type="Show",
+        content_type="Series",
         title="Ciao Alberto",
         description="With his best friend Luca away at school, Alberto is enjoying his new life in Portorosso working alongside Massimo—the imposing, tattooed, one-armed fisherman of few words—who’s quite possibly the coolest human in the entire world as far as Alberto is concerned. He wants more than anything to impress his mentor, but it’s easier said than done.",
         media="https://www.youtube.com/watch?v=KJZS7oXX5SE",
@@ -139,7 +139,7 @@ def seed_contents():
     # STAR WARS
     visions = Content(
         creator_id=4,
-        content_type="Show",
+        content_type="Series",
         title="Star Wars Visions",
         description="Star Wars: Visions is an anthology of animated shorts celebrating Star Wars through the lens of the world’s best anime creators and storytellers.",
         media="https://www.youtube.com/watch?v=jtAsl-0o3O0",
@@ -149,7 +149,7 @@ def seed_contents():
     )
     mandalorian = Content(
         creator_id=4,
-        content_type="Show",
+        content_type="Series",
         title="The Mandalorian",
         description="The Mandalorian joins a mismatched crew of cutthroat mercenaries. The mission is a dangerous one, and more difficult than it first appeared.",
         media="https://www.youtube.com/watch?v=aOC8E8z_ifw",
@@ -203,7 +203,7 @@ def seed_contents():
     )
     below_zero = Content(
         creator_id=5,
-        content_type="Show",
+        content_type="Series",
         title="Life Below Zero",
         description="Deep in Alaska, the primal way lives on. Fight the freeze, brave the wild, hold on to your sanity. And winter is no wonderland when temperatures plummet far below zero. This series follows the drama and hardships experienced by Alaskan households in different corners of this merciless territory as they battle to survive, thrive, and live life on their own terms.",
         media="https://www.youtube.com/watch?v=6OH6svuf44A",
@@ -213,7 +213,7 @@ def seed_contents():
     )
     whales = Content(
         creator_id=5,
-        content_type="Show",
+        content_type="Series",
         title="Secrets Of The Whales",
         description="Belugas and narwhals embark on an adventure through a maze of sea ice to their ancestral summering grounds in the Canadian Arctic.",
         media="https://www.youtube.com/watch?v=xOySOlB78dM",
@@ -260,7 +260,7 @@ def undo_contents():
 #         # banner="",
 #         thumbnail="",
 #         background_picture="",
-#      
+#
 #     )
 
 # DISNEY BACKGROUND VIDEO

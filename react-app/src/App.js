@@ -12,6 +12,10 @@ import CreateProfile from './components/ProfilePage/CreateProfile';
 import ContentPage from './components/ContentPage';
 import CreateContent from './components/ContentPage/CreateContent';
 import EditContent from './components/ContentPage/EditContent';
+import Watchlist from './components/Watchlist';
+import Originals from './components/Originals';
+import Movies from './components/Movies';
+import Series from './components/Series';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -51,6 +55,18 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/edit-content/:contentId' exact={true}>
           { user ? <EditContent user={user}/> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/watchlist' exact={true}>
+          { user ? <Watchlist user={user} /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/originals' exact={true}>
+          { user ? <Originals user={user} /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/movies' exact={true}>
+          { user ? <Movies user={user} /> : <Redirect to='/login' /> }
+        </ProtectedRoute>
+        <ProtectedRoute path='/series' exact={true}>
+          { user ? <Series user={user} /> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <Home />

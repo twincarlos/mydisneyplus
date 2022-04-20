@@ -30,6 +30,7 @@ function ContentPage () {
     if (!loaded) return null;
 
     if (!user.profiles.length) return <Redirect to='/create-profile' />;
+    if (!user.current_profile_id) return <Redirect to='/profiles' />
 
     return (
         <div id='content-background' style={{ backgroundImage: `url('${content.background_picture}')` }}>

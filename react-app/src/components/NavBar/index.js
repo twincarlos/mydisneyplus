@@ -23,21 +23,21 @@ const NavBar = ({ backgroundColor }) => {
           <i className="fas fa-search"></i>
           <p>SEARCH</p>
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/watchlist'>
           <i className="fas fa-plus"></i>
           <p>WATCHLIST</p>
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/originals'>
           <i className="fas fa-star"></i>
           <p>ORIGINALS</p>
         </NavLink>
-        <NavLink to='/'>
+        <NavLink to='/movies'>
           <i className="fas fa-film"></i>
           <p>MOVIES</p>
         </NavLink>
-        <NavLink to='/'>
-        <i className="fas fa-tv"></i>
-        <p>SERIES</p>
+        <NavLink to='/series'>
+          <i className="fas fa-tv"></i>
+          <p>SERIES</p>
         </NavLink>
         <ProfileButton user={user} profile={profile} />
     </nav>

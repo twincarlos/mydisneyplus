@@ -22,10 +22,10 @@ import natgeoLogo from '../../../assets/logos/natgeo.png';
 
 function ContentGallery() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const contents = useSelector(state => state.content.contents);
     const [loaded, setLoaded] = useState(false);
     const [visible, setVisible] = useState(null);
-    const history = useHistory();
 
     const creators = [
         { id: 1, logo: disneyLogo, video: disneyVideo },
@@ -58,7 +58,7 @@ function ContentGallery() {
                 }
             </div>
             {
-                Object.entries(contents).map(([category, contentsInCategory], idx) => (category !== 'Banner' && contentsInCategory.length) ? (
+                Object.entries(contents).map(([category, contentsInCategory], idx) => (category !== 'Banner' && category !== 'Movies' && category !== 'Series' && contentsInCategory.length) ? (
                     <div key={idx} className='category-container'>
                         <p style={{ fontSize: 20, marginBottom: 10 }}>{category}</p>
                         <div className='contents-in-category-container'>
