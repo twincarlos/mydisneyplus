@@ -62,9 +62,9 @@ function EditContent({ user }) {
                 step === 1 ? (
                     <div className='edit-content' id='edit-content-1'>
                         <h1>Title:</h1>
-                        <input defaultValue={content.title} onChange={e => setTitle(e.target.value)} type='text'></input>
+                        <input defaultValue={title.length ? title : content.title} onChange={e => setTitle(e.target.value)} type='text'></input>
                         <h1>Description:</h1>
-                        <textarea defaultValue={content.description} onChange={e => setDescription(e.target.value)} ></textarea>
+                        <textarea defaultValue={description.length ? description : content.description} onChange={e => setDescription(e.target.value)} ></textarea>
                     </div>
                 ) : null
             }

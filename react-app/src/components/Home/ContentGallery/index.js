@@ -2,7 +2,7 @@ import './ContentGallery.css';
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 
 import { getAllContents } from '../../../store/content';
 import NavBar from '../../NavBar';
@@ -20,7 +20,7 @@ import marvelLogo from '../../../assets/logos/marvel.png';
 import starwarsLogo from '../../../assets/logos/starwars.png';
 import natgeoLogo from '../../../assets/logos/natgeo.png';
 
-function ContentGallery() {
+function ContentGallery({ user }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const contents = useSelector(state => state.content.contents);
@@ -40,6 +40,7 @@ function ContentGallery() {
     }, [dispatch]);
 
     if (!loaded) return null;
+    if (!user.current_profile_id) return <Redirect />
 
     return (
         <div id='content-gallery'>

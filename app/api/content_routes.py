@@ -67,7 +67,7 @@ def all_contents():
             errors.append("Description required")
         if not len(request.form["media"]):
             errors.append("Please provide a URL for your content")
-        if not len(request.form["categories"].split(",")):
+        if not len(request.form["categories"]):
             errors.append("Please select at least 1 category")
         if "logo" in request.files and not allowed_file(request.files["logo"].filename):
             errors.append("Please provide a valid logo")
@@ -90,7 +90,7 @@ def all_contents():
             thumbnail_url = thumbnail_upload["url"]
 
         if "background_picture" in request.files:
-            background_picture.filename = get_unique_filename(thumbnail.filename)
+            background_picture.filename = get_unique_filename(background_picture.filename)
             background_picture_upload = upload_file_to_s3(background_picture)
             background_picture_url = background_picture_upload["url"]
 
@@ -166,7 +166,7 @@ def one_content(content_id):
             thumbnail_url = thumbnail_upload["url"]
 
         if "background_picture" in request.files:
-            background_picture.filename = get_unique_filename(thumbnail.filename)
+            background_picture.filename = get_unique_filename(background_picture.filename)
             background_picture_upload = upload_file_to_s3(background_picture)
             background_picture_url = background_picture_upload["url"]
 
