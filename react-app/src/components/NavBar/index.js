@@ -39,7 +39,7 @@ const NavBar = ({ background }) => {
           <i className="fas fa-tv"></i>
           <p>SERIES</p>
         </NavLink>
-        { profile && <ProfileButton user={user} profile={profile} /> }
+        <ProfileButton user={user} profile={profile} />
     </nav>
   );
 }

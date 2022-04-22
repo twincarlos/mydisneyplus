@@ -19,7 +19,7 @@ const LoginForm = () => {
     if (data) {
       setErrors(data);
     } else {
-      return <Redirect to='/'/>
+      return <Redirect to='/profiles'/>
     }
   };
 
