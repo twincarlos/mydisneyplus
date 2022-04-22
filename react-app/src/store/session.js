@@ -132,7 +132,7 @@ export const logout = () => async (dispatch) => {
 
 export const setOneProfile = profileId => async dispatch => {
   if (profileId) {
-    const response = await fetch(`/api/profiles/${profileId}`);
+    const response = await fetch(`/api/profiles/set-profile/${profileId}`, { method: 'PUT' });
     const profile = await response.json();
     dispatch(setProfile(profile));
     return profile;

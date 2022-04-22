@@ -5,6 +5,15 @@ import json
 
 profile_routes = Blueprint("profiles", __name__)
 
+@profile_routes.route('/set-profile/<int:profile_id>', methods=['PUT'])
+def set_profile(profile_id):
+    if request.method == 'PUT':
+        profile = Profile.query.get(profile_id)
+        current_user.current_profile_id = profile_id
+        db.session.commit()
+        return profile.to_dict()
+
+
 @profile_routes.route('', methods=['GET', 'POST'])
 def all_profiles():
     profiles = Profile.query.filter(Profile.owner_id == current_user.id).all()
@@ -32,16 +41,12 @@ def all_profiles():
         db.session.commit()
         return new_profile.to_dict()
 
-@profile_routes.route('/<int:profile_id>', methods=['GET', 'PUT', 'DELETE'])
+
+@profile_routes.route('/<int:profile_id>', methods=['PUT', 'DELETE'])
 def crud_profiles(profile_id):
     data = request.json
     profile = Profile.query.get(profile_id)
     profiles = Profile.query.filter(Profile.owner_id == current_user.id).all()
-
-    if request.method == 'GET':
-        current_user.current_profile_id = profile_id
-        db.session.commit()
-        return profile.to_dict()
 
     if request.method == 'PUT':
         if not len(data["name"]):
@@ -65,6 +70,7 @@ def crud_profiles(profile_id):
         db.session.delete(profile)
         db.session.commit()
         return profile.to_dict()
+
 
 @profile_routes.route('/<int:profile_id>/favorite/<int:content_id>', methods=['POST', 'DELETE'])
 def favorite_content(profile_id, content_id):

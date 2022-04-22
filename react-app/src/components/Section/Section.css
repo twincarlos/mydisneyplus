@@ -1,4 +1,4 @@
-div#originals {
+div#section {
     background-image: url('../../assets/home-background.png');
     background-size: cover;
     position: absolute;
@@ -7,22 +7,22 @@ div#originals {
     margin-top: 90px;
 }
 
-div#originals-container {
+div#section-container {
     margin-left: 100px;
     margin-top: 60px;
 }
 
-div#originals-container > h1 {
+div#section-container > h1 {
     font-size: 50px;
     margin-bottom: 10px;
 }
 
-div#originals-grid {
+div#section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-div.originals-content {
+div.section-content {
     width: 17vw;
     aspect-ratio: 16 / 9;
     background-size: cover;
@@ -33,7 +33,7 @@ div.originals-content {
     margin-bottom: 20px;
 }
 
-div.originals-content:hover {
+div.section-content:hover {
     transform: scale(1.05);
     border: 5px solid rgb(168, 169, 171);
 }

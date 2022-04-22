@@ -13,9 +13,7 @@ import ContentPage from './components/ContentPage';
 import CreateContent from './components/ContentPage/CreateContent';
 import EditContent from './components/ContentPage/EditContent';
 import Watchlist from './components/Watchlist';
-import Originals from './components/Originals';
-import Movies from './components/Movies';
-import Series from './components/Series';
+import Section from './components/Section';
 import Brand from './components/Brand';
 import Search from './components/Search';
 import NotFound from './components/NotFound/NotFound';
@@ -62,14 +60,8 @@ function App() {
         <ProtectedRoute path='/watchlist' exact={true}>
           { user ? <Watchlist user={user} /> : <Redirect to='/login' /> }
         </ProtectedRoute>
-        <ProtectedRoute path='/originals' exact={true}>
-          { user ? <Originals user={user} /> : <Redirect to='/login' /> }
-        </ProtectedRoute>
-        <ProtectedRoute path='/movies' exact={true}>
-          { user ? <Movies user={user} /> : <Redirect to='/login' /> }
-        </ProtectedRoute>
-        <ProtectedRoute path='/series' exact={true}>
-          { user ? <Series user={user} /> : <Redirect to='/login' /> }
+        <ProtectedRoute path='/section/:section' exact={true}>
+          { user ? <Section user={user} /> : <Redirect to='/login' /> }
         </ProtectedRoute>
         <ProtectedRoute path='/brand/:brandName' exact={true}>
           { user ? <Brand user={user} /> : <Redirect to='/login' /> }

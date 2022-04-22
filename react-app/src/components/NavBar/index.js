@@ -27,19 +27,19 @@ const NavBar = ({ background }) => {
           <i className="fas fa-plus"></i>
           <p>WATCHLIST</p>
         </NavLink>
-        <NavLink to='/originals'>
+        <NavLink to='/section/originals'>
           <i className="fas fa-star"></i>
           <p>ORIGINALS</p>
         </NavLink>
-        <NavLink to='/movies'>
+        <NavLink to='/section/movies'>
           <i className="fas fa-film"></i>
           <p>MOVIES</p>
         </NavLink>
-        <NavLink to='/series'>
+        <NavLink to='/section/series'>
           <i className="fas fa-tv"></i>
           <p>SERIES</p>
         </NavLink>
-        <ProfileButton user={user} profile={profile} />
+        { profile && <ProfileButton user={user} profile={profile} /> }
     </nav>
   );
 }
