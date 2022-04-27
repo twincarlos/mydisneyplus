@@ -6,8 +6,9 @@ import { Redirect } from 'react-router-dom';
 
 function Home () {
     const user = useSelector(state => state.session.user);
+    const profile = useSelector(state => state.session.profile);
 
-    return user ? (user.current_profile_id ? <ContentGallery user={user} /> : (user.profiles.length ? <Redirect to='/profiles'/> : <Redirect to='/create-profile'/>)) : <Splash />
+    return user ? (profile ? <ContentGallery user={user} /> : (user.profiles.length ? <Redirect to='/profiles'/> : <Redirect to='/create-profile'/>)) : <Splash />
 }
 
 export default Home
