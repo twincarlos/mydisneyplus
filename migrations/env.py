@@ -59,8 +59,6 @@ def run_migrations_offline():
 
 
 def run_migrations_online():
-    def run_migrations_online():
-
     def process_revision_directives(context, revision, directives):
         if getattr(config.cmd_opts, 'autogenerate', False):
             script = directives[0]
