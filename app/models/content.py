@@ -1,12 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
 class Content(db.Model):
     __tablename__ = "contents"
 
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
     id = db.Column(db.Integer, primary_key=True)
-    creator_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    creator_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
     content_type = db.Column(db.String, nullable=False)
     title = db.Column(db.String, unique=True, nullable=False)
     description = db.Column(db.Text, nullable=False)

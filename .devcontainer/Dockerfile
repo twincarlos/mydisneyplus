@@ -18,4 +18,4 @@ sudo -u postgres psql -c "CREATE DATABASE vscode WITH OWNER vscode" && \
 sudo -u postgres psql -c "CREATE DATABASE python_project WITH OWNER vscode"
 
 # auto configure flask app to connect to internal postgres
-ENV DATABASE_URL=postgresql://vscode:password@localhost/python_project
+ENV DATABASE_URL=postgres://app_academy_projects_juom_user:08OmHNKiePZwsChW8EIfqd8v2Fas90dN@dpg-ceq8qqqrrk0eo0t0q2rg-a/app_academy_projects_juom
