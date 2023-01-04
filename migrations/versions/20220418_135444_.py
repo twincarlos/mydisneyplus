@@ -26,6 +26,8 @@ def upgrade():
     sa.Column('name', sa.String(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE categories SET SCHEMA {SCHEMA};")
     op.create_table('category_details',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('category_id', sa.Integer(), nullable=False),
@@ -35,7 +37,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
-        op.execute(f"ALTER TABLE <table_name> SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE category_details SET SCHEMA {SCHEMA};")
     op.drop_column('contents', 'categories')
     # ### end Alembic commands ###
 

@@ -32,6 +32,8 @@ def upgrade():
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_table('contents',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('creator_id', sa.Integer(), nullable=False),
@@ -45,6 +47,8 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('title')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE contents SET SCHEMA {SCHEMA};")
     op.create_table('profiles',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('owner_id', sa.Integer(), nullable=False),
@@ -53,6 +57,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE profiles SET SCHEMA {SCHEMA};")
     op.create_table('favorites',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('profile_id', sa.Integer(), nullable=False),
@@ -62,7 +68,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
-        op.execute(f"ALTER TABLE <table_name> SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE favorites SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
