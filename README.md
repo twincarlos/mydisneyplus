@@ -2,7 +2,7 @@
 
 MyDisneyPlus is a clone of Disney Plus, a video streaming platform. Here, users can enjoy a wide variety of content as well as publish their own.
 
-Hosted live on Heroku: [MyDisneyPlus](http://my-disney-plus.herokuapp.com/)
+Hosted live on Heroku: [MyDisneyPlus](https://my-disney-plus.onrender.com/)
 
 ## Features
 Logged in users can:

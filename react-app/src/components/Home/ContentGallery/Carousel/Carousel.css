@@ -1,7 +1,7 @@
 div#carousel-container {
     display: flex;
     align-items: center;
-    height: 520px;
+    height: 40vh;
     margin-top: 10px;
 }
 
@@ -38,13 +38,24 @@ img.logo {
 
 div#carousel-dots {
     position: absolute;
-    right: 160px;
-    margin-bottom: -450px;
+    right: 8vw;
+    top: 48vh;
     width: 250px;
     display: flex;
     justify-content: space-between;
     font-size: 10px;
     color: rgb(150, 158, 171);
+    cursor: pointer;
+}
+
+div#carousel-dots > i {
+    border: 1.5px solid black;
+    border-radius: 50%;
+}
+
+div#carousel-dots > i:hover {
+    transition: .3s;
+    color: rgb(249, 249, 249);
 }
 
 div#carousel-dots > i.current {

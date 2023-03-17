@@ -66,7 +66,6 @@ function ContentGallery({ user }) {
                             {
                                 contentsInCategory.map(content => (
                                     <div onClick={() => history.push(`/content/${content.id}`)} className='content-in-category-container' key={content.id} style={{ backgroundImage: `url('${content.thumbnail}')` }}>
-
                                     </div>
                                 ))
                             }

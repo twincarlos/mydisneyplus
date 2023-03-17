@@ -16,17 +16,18 @@ div#content-gallery {
 div#creators-container {
     position: relative;
     width: 90%;
-    height: 300px;
+    height: fit-content;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 0;
 }
 
 div.creator-container {
     position: relative;
-    width: 360px;
-    height: 201px;
+    width: 16vw;
+    height: 16vh;
     border-radius: 15px;
     background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
@@ -57,16 +58,15 @@ div.creator-container > video {
 /* CONTENTS CONTAINER */
 
 div.category-container {
-    margin-left: 110px;
+    padding-left: 5vw;
     height: 280px;
-    margin-bottom: 30px;
     overflow-x: scroll;
 }
 
 div.contents-in-category-container {
-    height: 213.5px;
-    width: fit-content;
     display: flex;
+    height: 24vh;
+    width: fit-content;
 }
 
 div.content-in-category-container {
