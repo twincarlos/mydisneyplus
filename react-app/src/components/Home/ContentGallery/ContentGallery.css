@@ -53,6 +53,7 @@ div.creator-container > video {
     border-radius: 10px;
     margin-top: -190px;
     top: -20px;
+    aspect-ratio: 16 / 10;
 }
 
 /* CONTENTS CONTAINER */
@@ -65,7 +66,7 @@ div.category-container {
 
 div.contents-in-category-container {
     display: flex;
-    height: 24vh;
+    height: 20vh;
     width: fit-content;
 }
 
