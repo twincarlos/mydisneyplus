@@ -51,7 +51,8 @@ function ContentGallery({ user }) {
                     creators.map(creator => (
                         <div key={creator.id} className='creator-container' onClick={() => history.push(`/brand/${creator.name}`)} onMouseEnter={() => setVisible(creator.id)} onMouseLeave={() => setVisible(null)}>
                             <img src={creator.logo} alt=''></img>
-                            <video autoPlay loop muted style={{ visibility: visible === creator.id ? 'visible' : 'hidden' }}>
+                            {/* <video autoPlay loop muted style={{ visibility: visible === creator.id ? 'visible' : 'hidden' }}> */}
+                            <video autoPlay loop muted style={{ visibility: 'hidden' }}>
                                 <source src={creator.video} type='video/mp4'></source>
                             </video>
                         </div>
